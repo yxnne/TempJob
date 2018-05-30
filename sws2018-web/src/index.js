@@ -13,18 +13,14 @@ import reducers from './reducers';
 
 // import pages in container folder
 import PageLogin from './container/login/login';
+import PageHospitalDashboard from './container/hospital_dashboard/hospital_dashboard';
 
 // redux调试工具
 const reduxDevTool = window.__REDUX_DEVTOOLS_EXTENSION__?window.__REDUX_DEVTOOLS_EXTENSION__():f=>f;
 const store = createStore(reducers, compose(applyMiddleware(thunk), reduxDevTool));
 
 
-function C1(){
-  return <Button type='primary'>SHIT</Button>;
-};
-function C2(){
-  return <Button type='ghost'>SHIT</Button>;
-}
+
 
 
 ReactDOM.render((
@@ -33,7 +29,7 @@ ReactDOM.render((
       <div>
         <Switch>
           <Route path="/login" component={PageLogin}></Route>
-          <Route path="/b2" component={C2}></Route>
+          <Route path="/dashboard" component={PageHospitalDashboard}></Route>
         </Switch>
 
       </div>
