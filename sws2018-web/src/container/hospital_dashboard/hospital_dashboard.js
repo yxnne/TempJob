@@ -1,14 +1,18 @@
 import React from 'react';
 import { Layout, Icon } from 'antd';
 import { Switch, Route } from 'react-router-dom';
+// import Header and Menu
 import MainHeaderComponent from '../../component/main_header/main_header';
 import HospitalMenuComponent from '../../component/hospital_menu/hospital_menu';
+// import Pages for Menu Click
+import PageEventCheck from '../event_check/event_check';
+
 import './hospital_dashboard.css';
 
-import { getStaticMenusInfos } from './static_menu_config';
+import { getStaticMenusInfos, getPagePaths } from './static_menu_config';
 
 const { Content, Sider } = Layout;
-
+const paths = getPagePaths();
 // 测试
 function T1(){
   return (
@@ -42,7 +46,7 @@ class PageHospitalDashboard extends React.Component{
 
   toggle(){
     this.setState({
-      menuTheme: this.state.collapsed?"light":"dark",
+      menuTheme: this.state.collapsed?"light":"light",
       collapsed: !this.state.collapsed,
 
    });
@@ -68,10 +72,10 @@ class PageHospitalDashboard extends React.Component{
           </div>
 
 
-          <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 1000 }}>
+          <Content style={{ background: '#fff', paddingLeft: 12, paddingRight: 24, margin: 0, minHeight: 1000 }}>
             <Switch>
               <div>
-                <Route path="/dashboard/p" component={T1}></Route>
+                <Route path={paths.eventcheck} component={PageEventCheck}></Route>
                 <Route path="/q" component={T2}></Route>
 
               </div>

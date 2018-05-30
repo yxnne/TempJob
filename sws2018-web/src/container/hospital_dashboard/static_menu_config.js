@@ -1,9 +1,17 @@
+// 路由配置
+export function getPagePaths(){
+  return {
+    overall:'/dashboard/overall', // X医院总览
+    eventcheck:'/dashboard/eventcheck',// 事件查询
+  };
+}
+const paths = getPagePaths();
 // 定义一个页面和路由对应的对象
 /*
 当前的页面menu（静态的）
   X医院总览
   信息查询
-    -- 数据记录
+    -- 事件查询
     -- 设备日志
   统计分析
     -- 依从率分析
@@ -19,14 +27,14 @@ const staticMenuInfos = [
   {
     icon : 'dashboard',
     title : '医院总览',
-    linkPath : '/dashboard',
+    linkPath : paths.overall,
   },{
     icon : 'search',
     title : '信息查询',
     subMenus : [
       {
-        title : '数据记录',
-        linkPath : '/dashboard'
+        title : '事件查询',
+        linkPath : paths.eventcheck
       }, {
         title : '设备日志',
         linkPath : '/dashboard'
