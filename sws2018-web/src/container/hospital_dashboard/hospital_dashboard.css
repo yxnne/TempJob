@@ -1,9 +1,10 @@
 .menu-collapsed-trigger{
   font-size: 18px;
   line-height: 64px;
-  padding: 0 24px;
+  padding: 0 12px 0 2px;
   cursor: pointer;
   transition: color .3s;
+
 }
 
 .menu-collapsed-trigger:hover {

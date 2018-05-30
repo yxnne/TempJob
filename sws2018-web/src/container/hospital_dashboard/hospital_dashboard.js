@@ -5,6 +5,8 @@ import MainHeaderComponent from '../../component/main_header/main_header';
 import HospitalMenuComponent from '../../component/hospital_menu/hospital_menu';
 import './hospital_dashboard.css';
 
+import { getStaticMenusInfos } from './static_menu_config';
+
 const { Content, Sider } = Layout;
 
 // 测试
@@ -20,25 +22,8 @@ function T2(){
   );
 }
 
-// 定义一个页面和路由对应的对象
-const menuInfos = [{
-  icon : 'mail',
-  title : 'Main Test',
-  linkPath : '/dashboard/p',
-
-},{
-  icon : 'mail',
-  title : 'SHIT',
-  subMenus : [
-    {
-      title : 'Sub Test 1',
-      linkPath : ''
-    }, {
-      title : 'Sub Test 2',
-      linkPath : '/q'
-    },
-  ],
-}];
+// 得到Menu信息对象
+const menuInfos = getStaticMenusInfos();
 
 /**
  * 页面，进入系统后的页面主框架
@@ -69,17 +54,21 @@ class PageHospitalDashboard extends React.Component{
         <MainHeaderComponent />
 
         <Layout>
-          <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+          <Sider trigger={null} collapsible collapsed={this.state.collapsed}
+            style={{backgroundColor:'transparent'}}>
             <HospitalMenuComponent theme={this.state.menuTheme} menuInfos={menuInfos}/>
           </Sider>
 
           {/* 这个Icon是控制Menu伸缩的*/}
-          <Icon className="menu-collapsed-trigger"
-            type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-            onClick={this.toggle}
-          />
+          <div style={{background:'white'}}>
+            <Icon className="menu-collapsed-trigger"
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={this.toggle}
+            />
+          </div>
 
-          <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
+
+          <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 1000 }}>
             <Switch>
               <div>
                 <Route path="/dashboard/p" component={T1}></Route>
