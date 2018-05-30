@@ -1,3 +1,19 @@
 .main-header h1{
   color: white;
+  font-size: 22px;
+}
+.main-header .logo-img{
+  width: 50%;
+  height: 50%;
+}
+.main-header .user-info .username-span{
+  color: white;
+  margin-left: 20px;
+}
+.main-header .user-info:hover{
+  cursor: pointer;
+  font-weight:bold;
+}
+.main-header .logoout-btn:hover{
+  cursor: pointer;
 }
