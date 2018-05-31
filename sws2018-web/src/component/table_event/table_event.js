@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from 'antd';
+import PropTypes from 'prop-types';
 
  /**
   * 事件查询的Table组件
@@ -69,5 +70,11 @@ class TableEventComponent extends React.Component{
   }
 
 }
+
+// 组件属性检查设置
+TableEventComponent.propTypes = {
+  onNameClick:PropTypes.func.isRequired,
+  tableData:PropTypes.array.isRequired,
+};
 
 export default TableEventComponent;

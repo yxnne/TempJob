@@ -20,13 +20,19 @@ class PageEventCheck extends React.Component{
     };
 
     this.toggle = this.toggle.bind(this);
+    this.onTableNameClickCallback = this.onTableNameClickCallback.bind(this);
   }
-
+  // 右侧伸缩板子控制
   toggle(){
     this.setState({
       infoPanelCollaped: !this.state.infoPanelCollaped,
 
    });
+  }
+
+  // Table的名字点击时的回调函数
+  onTableNameClickCallback(clickedRecordRow){
+    console.log(clickedRecordRow);
   }
 
   render(){
@@ -46,7 +52,7 @@ class PageEventCheck extends React.Component{
 
             {/* 查询结果 -- Table */}
             <Card style={{marginTop:20, marginRight:20, borderRadius:6}}>
-              <TableEventComponent  tableData={this.state.tableData}/>
+              <TableEventComponent  tableData={this.state.tableData} onNameClick={this.onTableNameClickCallback}/>
             </Card>
 
 
