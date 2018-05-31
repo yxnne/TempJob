@@ -39,17 +39,32 @@ class PageHospitalDashboard extends React.Component{
 
     this.state = {
       collapsed:false,
-      menuTheme:'light'
+      menuTheme:'light',
+      menuToggleShow:'hidden', //控制menu的那个按钮的显示或者隐藏状态
     };
     this.toggle = this.toggle.bind(this);
   }
 
+  // 点击处理Menu显示或者隐藏
   toggle(){
     this.setState({
       menuTheme: this.state.collapsed?"light":"light",
       collapsed: !this.state.collapsed,
 
    });
+  }
+
+  // 控制toggleBtn的显示和隐藏
+  showToggleBtn(){
+    this.setState({
+      menuToggleShow:'visible'
+    });
+  }
+
+  hideToggleBtn(){
+    this.setState({
+      menuToggleShow:'hidden'
+    });
   }
 
   render(){
@@ -59,20 +74,25 @@ class PageHospitalDashboard extends React.Component{
 
         <Layout>
           <Sider trigger={null} collapsible collapsed={this.state.collapsed}
+            onMouseOver={()=>this.showToggleBtn()} onMouseOut={()=>this.hideToggleBtn()}
             style={{backgroundColor:'transparent'}}>
             <HospitalMenuComponent theme={this.state.menuTheme} menuInfos={menuInfos}/>
           </Sider>
 
-          {/* 这个Icon是控制Menu伸缩的*/}
-          <div style={{background:'white'}}>
-            <Icon className="menu-collapsed-trigger"
-              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-              onClick={this.toggle}
-            />
-          </div>
 
 
-          <Content style={{ background: '#fff', paddingLeft: 12, paddingRight: 24, margin: 0, minHeight: 1000 }}>
+
+          <Content style={{ margin: 0, minHeight: 1000 }}>
+
+            {/* 这个Icon是控制Menu伸缩的*/}
+            <div className='trigger-container'
+              onMouseOver={()=>this.showToggleBtn()} onMouseOut={()=>this.hideToggleBtn()}>
+              <Icon className="menu-collapsed-trigger" style={{visibility:this.state.menuToggleShow}}
+                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                onClick={this.toggle}
+              />
+            </div>
+
             <Switch>
               <div>
                 <Route path={paths.eventcheck} component={PageEventCheck}></Route>
