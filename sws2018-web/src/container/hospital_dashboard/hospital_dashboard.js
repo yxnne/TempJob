@@ -1,11 +1,12 @@
 import React from 'react';
-import { Layout, Icon } from 'antd';
+import { Layout, Icon, Card } from 'antd';
 import { Switch, Route } from 'react-router-dom';
 // import Header and Menu
 import MainHeaderComponent from '../../component/main_header/main_header';
 import HospitalMenuComponent from '../../component/hospital_menu/hospital_menu';
 // import Pages for Menu Click
 import PageEventCheck from '../event_check/event_check';
+import PageDeviceStatusCheck from '../device_status_check/device_status_check';
 
 import './hospital_dashboard.css';
 
@@ -79,12 +80,9 @@ class PageHospitalDashboard extends React.Component{
             <HospitalMenuComponent theme={this.state.menuTheme} menuInfos={menuInfos}/>
           </Sider>
 
-
-
-
           <Content style={{ margin: 0, minHeight: 1000 }}>
 
-            {/* 这个Icon是控制Menu伸缩的*/}
+            {/* 这个Icon是控制主Menu伸缩的 */}
             <div className='trigger-container'
               onMouseOver={()=>this.showToggleBtn()} onMouseOut={()=>this.hideToggleBtn()}>
               <Icon className="menu-collapsed-trigger" style={{visibility:this.state.menuToggleShow}}
@@ -93,15 +91,16 @@ class PageHospitalDashboard extends React.Component{
               />
             </div>
 
+            {/* 主体内容在卡片内切换*/}
             <Switch>
               <div>
-                <Route path={paths.eventcheck} component={PageEventCheck}></Route>
-                <Route path="/q" component={T2}></Route>
+                <Route path={paths.eventCheck} component={PageEventCheck}></Route>
+                <Route path={paths.deviceStatusCheck} component={PageDeviceStatusCheck}></Route>
 
               </div>
-
-
             </Switch>
+
+
           </Content>
         </Layout>
 

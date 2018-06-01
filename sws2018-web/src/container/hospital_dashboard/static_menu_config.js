@@ -2,7 +2,8 @@
 export function getPagePaths(){
   return {
     overall:'/dashboard/overall', // X医院总览
-    eventcheck:'/dashboard/eventcheck',// 事件查询
+    eventCheck:'/dashboard/eventCheck', // 事件查询
+    deviceStatusCheck:'/dashboard/deviceStatusCheck', // 设备状态查询
   };
 }
 const paths = getPagePaths();
@@ -34,10 +35,10 @@ const staticMenuInfos = [
     subMenus : [
       {
         title : '事件查询',
-        linkPath : paths.eventcheck
+        linkPath : paths.eventCheck
       }, {
         title : '设备日志',
-        linkPath : '/dashboard'
+        linkPath : paths.deviceStatusCheck
       },
     ],
   },{
