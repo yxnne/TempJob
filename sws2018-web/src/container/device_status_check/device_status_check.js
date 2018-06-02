@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Icon, Button, Card, Input, Divider } from 'antd';
+import { Layout, Card, Divider } from 'antd';
 import TableDeviceStatusCheckComponent from '../../component/table/table_device_status_check/table_device_status_check';
 import FormDevicesStatusComponent from '../../component/form/form_device_status/form_device_status';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Icon, Button, Card, Input, Divider } from 'antd';
+import { Layout, Card, Divider } from 'antd';
 import TableEventComponent from '../../component/table/table_event/table_event';
 import FormEventComponent from '../../component/form/form_event/form_event';
 

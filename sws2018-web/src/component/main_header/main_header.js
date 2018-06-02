@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Row, Col, Avatar, Button, Icon, Popconfirm } from 'antd';
+import { Layout, Row, Col, Avatar, Icon, Popconfirm } from 'antd';
 import './main_header.css';
 import logo from '../../logo.svg';
 

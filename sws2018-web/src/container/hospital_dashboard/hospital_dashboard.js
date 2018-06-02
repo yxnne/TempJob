@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Icon, Card } from 'antd';
+import { Layout, Icon } from 'antd';
 import { Switch, Route } from 'react-router-dom';
 // import Header and Menu
 import MainHeaderComponent from '../../component/main_header/main_header';
@@ -15,17 +15,17 @@ import { getStaticMenusInfos, getPagePaths } from './static_menu_config';
 const { Content, Sider } = Layout;
 const paths = getPagePaths();
 // 测试
-function T1(){
-  return (
-    <div>T1 Comp</div>
-  );
-}
-
-function T2(){
-  return (
-    <div>XXXXX Comp</div>
-  );
-}
+// function T1(){
+//   return (
+//     <div>T1 Comp</div>
+//   );
+// }
+//
+// function T2(){
+//   return (
+//     <div>XXXXX Comp</div>
+//   );
+// }
 
 // 得到Menu信息对象
 const menuInfos = getStaticMenusInfos();
