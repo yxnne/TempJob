@@ -7,6 +7,7 @@ import HospitalMenuComponent from '../../component/hospital_menu/hospital_menu';
 // import Pages for Menu Click
 import PageEventCheck from '../event_check/event_check';
 import PageDeviceStatusCheck from '../device_status_check/device_status_check';
+import PageBizManage from '../biz_manage/biz_manage';
 
 import './hospital_dashboard.css';
 
@@ -96,6 +97,7 @@ class PageHospitalDashboard extends React.Component{
               <div>
                 <Route path={paths.eventCheck} component={PageEventCheck}></Route>
                 <Route path={paths.deviceStatusCheck} component={PageDeviceStatusCheck}></Route>
+                <Route path={paths.bizManage} component={PageBizManage}></Route>
 
               </div>
             </Switch>

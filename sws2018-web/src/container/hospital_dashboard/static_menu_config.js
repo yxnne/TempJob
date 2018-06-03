@@ -4,6 +4,7 @@ export function getPagePaths(){
     overall:'/dashboard/overall', // X医院总览
     eventCheck:'/dashboard/eventCheck', // 事件查询
     deviceStatusCheck:'/dashboard/deviceStatusCheck', // 设备状态查询
+    bizManage:'/dashboard/bizManage', // 业务管理
   };
 }
 const paths = getPagePaths();
@@ -59,7 +60,7 @@ const staticMenuInfos = [
     subMenus : [
       {
         title : '业务管理',
-        linkPath : '/dashboard'
+        linkPath : paths.bizManage
       }
     ],
   },{
