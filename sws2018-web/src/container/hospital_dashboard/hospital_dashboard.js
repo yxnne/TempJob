@@ -4,8 +4,10 @@ import { Switch, Route } from 'react-router-dom';
 // import Header and Menu
 import MainHeaderComponent from '../../component/main_header/main_header';
 import HospitalMenuComponent from '../../component/hospital_menu/hospital_menu';
+import AppFooter from '../../component/footer/app_footer';
 // import Pages for Menu Click
 import PageEventCheck from '../event_check/event_check';
+import PageHospitalOverall from '../hospital_overall/hospital_overall';
 import PageDeviceStatusCheck from '../device_status_check/device_status_check';
 import PageBizManage from '../biz_manage/biz_manage';
 
@@ -13,7 +15,7 @@ import './hospital_dashboard.css';
 
 import { getStaticMenusInfos, getPagePaths } from './static_menu_config';
 
-const { Content, Sider } = Layout;
+const { Content, Sider, Footer } = Layout;
 const paths = getPagePaths();
 // 测试
 // function T1(){
@@ -81,7 +83,7 @@ class PageHospitalDashboard extends React.Component{
             <HospitalMenuComponent theme={this.state.menuTheme} menuInfos={menuInfos}/>
           </Sider>
 
-          <Content style={{ margin: 0, minHeight: 1000 }}>
+          <Content style={{ margin: 0, maxHeight: 1016 }}>
 
             {/* 这个Icon是控制主Menu伸缩的 */}
             <div className='trigger-container'
@@ -95,6 +97,7 @@ class PageHospitalDashboard extends React.Component{
             {/* 主体内容在卡片内切换*/}
             <Switch>
               <div>
+                <Route path={paths.hospitalOverall} component={PageHospitalOverall}></Route>
                 <Route path={paths.eventCheck} component={PageEventCheck}></Route>
                 <Route path={paths.deviceStatusCheck} component={PageDeviceStatusCheck}></Route>
                 <Route path={paths.bizManage} component={PageBizManage}></Route>
@@ -102,11 +105,11 @@ class PageHospitalDashboard extends React.Component{
               </div>
             </Switch>
 
+            <AppFooter />
 
           </Content>
+
         </Layout>
-
-
       </Layout>
     );
   }

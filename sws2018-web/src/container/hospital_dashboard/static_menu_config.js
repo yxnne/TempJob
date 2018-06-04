@@ -1,7 +1,7 @@
 // 路由配置
 export function getPagePaths(){
   return {
-    overall:'/dashboard/overall', // X医院总览
+    hospitalOverall:'/dashboard/hospitalOverall', // X医院总览
     eventCheck:'/dashboard/eventCheck', // 事件查询
     deviceStatusCheck:'/dashboard/deviceStatusCheck', // 设备状态查询
     bizManage:'/dashboard/bizManage', // 业务管理
@@ -29,7 +29,7 @@ const staticMenuInfos = [
   {
     icon : 'dashboard',
     title : '医院总览',
-    linkPath : paths.overall,
+    linkPath : paths.hospitalOverall,
   },{
     icon : 'search',
     title : '信息查询',
