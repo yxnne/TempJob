@@ -124,7 +124,7 @@ class OrganizationTreeComponent extends React.Component{
     });
 
     return (
-      <div>
+      <div >
         <div style={{paddingRight:16}}>
           <Search style={{ marginBottom: 8 }} placeholder="Search" onChange={this.onChange} />
         </div>

@@ -57,3 +57,33 @@ export function getFakedata_deviceStatus(num){
   }
   return datas;
 }
+
+/**
+ * 职工假数据,一般，管理，职工页面会用到
+ */
+export function getFakedata_manageStaff(num){
+  const fakeFamilyNames = ['张', '王', '李', '公孙', '吴', '钱', '范'];
+  const fakeSecondNames = ['国荣', '祖贤', '冰冰', '殃', '建豪', '学森', '仲淹'];
+  const fakeNo = ['M0001', 'W00002', '000008', '110008', 'M0005', '000001', '006606'];
+  const fakeRole = ['医生', '护士', '护士', '其他'];
+
+  let datas = [];
+  for(let i = 0; i < num; i++ ){
+    let r1 = Math.random();
+    let r2 = Math.random();
+    let r_fname = Math.floor(r1 * fakeFamilyNames.length);
+    let r_sname = Math.floor(r2 * fakeSecondNames.length);
+    let r_role = Math.floor(r1 * fakeRole.length);
+    let name = fakeFamilyNames[r_fname] + fakeSecondNames[r_sname];
+    datas.push({
+      name:name,
+      no:`NO00${i*100 + (i + 1)}`,
+      card:`000${i*100 + (i + 1)}`,
+      role:fakeRole[r_role],
+      user:name,
+      remark:''
+    });
+
+  }
+  return datas;
+}
