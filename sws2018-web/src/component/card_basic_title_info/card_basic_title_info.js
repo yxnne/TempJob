@@ -14,9 +14,9 @@ class CardBasicTitleInfoComponent extends React.Component{
       marginTop:20,
       marginRight:20,
       borderRadius:6,
-      paddingLeft:16,
-      paddingRight:16,
-      paddingTop:8,
+      paddingLeft:20,
+      paddingRight:24,
+      paddingTop:16,
       paddingBottom:8,
       backgroundColor:'white',
       border:'solid #e8e8e8 1px'

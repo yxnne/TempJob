@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Row, Col, Avatar, Icon, Popconfirm } from 'antd';
 import './main_header.css';
-import logo from '../../logo.svg';
+import logo from '../../swslogo.png';
 
 const { Header } = Layout;
 const appName = '智控手卫生物联网管理系统';

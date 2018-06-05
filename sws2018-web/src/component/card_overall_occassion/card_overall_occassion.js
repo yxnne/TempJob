@@ -1,29 +1,33 @@
 import React from 'react';
 import { Row, Col, Card, Icon, Divider, Progress } from 'antd';
 /**
- * 卡片，总依从率：环形加条形图
+ * 卡片，时机依从率组件
  */
 class CardOverallOccasionComponent extends React.Component{
 
   render(){
     const cardStyle = {
-      marginTop:16,
+      marginTop:12,
       borderRadius:6,
+      height:156
     };
+    const allTimes = this.props.doTimes + this.props.notDoTimes;
+    let percent = allTimes === 0 ? 0: this.props.doTimes / allTimes * 100;
+    percent = percent.toFixed(1); // 保留小数位
     return (
       <Card style={cardStyle}>
 
 
         <Row gutter={8} >
-          <Col span={14} style={{marginTop:12}}>
+          <Col span={14} style={{marginTop:20}}>
             <h3 >{this.props.title}</h3>
-            <Icon type="check" />200次
+            <Icon type="check" />&nbsp;&nbsp;&nbsp;{this.props.doTimes}次
             <Divider type="vertical"/>
-            <Icon type="close" />59次
+            <Icon type="close" />&nbsp;&nbsp;&nbsp;{this.props.notDoTimes}次
           </Col>
 
-          <Col span={10} style={{textAlign:"center"}}>
-            <Progress type="circle" percent={75} width={80} />
+          <Col span={10} style={{textAlign:"center", marginTop:8}}>
+            <Progress type="circle" percent={percent} width={90} />
           </Col>
         </Row>
       </Card>
