@@ -1,10 +1,16 @@
 import React from 'react';
-import { Layout, Card, Divider, Select } from 'antd';
-import TableEventComponent from '../../component/table/table_event/table_event';
-import FormEventComponent from '../../component/form/form_event/form_event';
+import { Layout, Card, Divider, Select, Row, Col } from 'antd';
+import FormStatisticDepartmentComponent from '../../component/form/form_statistic_department/form_statistic_department';
+
+import CardOverallRateComponent from '../../component/card_overall_rate/card_overall_rate';
+import CardOverallTendencyComponent from '../../component/card_overall_tendency/card_overall_tendency';
+import CardOverallOccasionComponent from '../../component/card_overall_occassion/card_overall_occassion';
+import TableDeviceStatusCheckComponent from '../../component/table/table_device_status_check/table_device_status_check';
+
 
 // 假数据生产器
-import { getFakedata_event } from '../../util/fake/ui_fakedata_generator';
+import { getFakedata_deviceStatus } from '../../util/fake/ui_fakedata_generator';
+
 
 const { Content, Sider } = Layout;
 const Option = Select.Option;
@@ -19,7 +25,8 @@ class PageStatisticDepartmentRate extends React.Component{
     super();
     this.state = {
       infoPanelCollaped:true,
-      tableData:getFakedata_event(50),
+      radio:'overall',
+      tableData:getFakedata_deviceStatus(30),
     };
 
     this.toggle = this.toggle.bind(this);
@@ -43,7 +50,52 @@ class PageStatisticDepartmentRate extends React.Component{
     // 拉开 右侧侧滑菜单
     this.toggle();
   }
+
+  // Radio切换，控制state
+  handleRadioChange(tag){
+    this.setState({
+      radio:tag
+    });
+  }
+
   render(){
+
+    const viewOverallCards = (
+      <div>
+        <Row gutter={8}>
+          {/* 部门总体依从率 */}
+          <Col span={10}>
+            <CardOverallRateComponent doTimes={165} notDoTimes={100}/>
+          </Col>
+          {/* 折线趋势图 */}
+          <Col span={14}>
+            <CardOverallTendencyComponent />
+          </Col>
+        </Row>
+        <Row gutter={8}>
+          <Col span={6}>
+            <CardOverallOccasionComponent title="接触患者前" doTimes={50} notDoTimes={90} />
+          </Col>
+          <Col span={6}>
+            <CardOverallOccasionComponent title="接触患者后" doTimes={150} notDoTimes={30} />
+          </Col>
+          <Col span={6}>
+            <CardOverallOccasionComponent title="接触患者环境后" doTimes={250} notDoTimes={190} />
+          </Col>
+          <Col span={6}>
+            <CardOverallOccasionComponent title="离开患者后" doTimes={20} notDoTimes={118} />
+          </Col>
+        </Row>
+      </div>
+
+    );
+    const viewStaffRateTable = (
+      <div>
+        <TableDeviceStatusCheckComponent tableData={this.state.tableData} onNameClick={this.onTableNameClickCallback}/>
+      </div>
+    );
+
+
 
     return (
       <div>
@@ -53,17 +105,19 @@ class PageStatisticDepartmentRate extends React.Component{
             <Card style={{marginTop:20, marginRight:20, borderRadius:6}}>
 
               {/* 查询条件 表单 */}
-              <Select defaultValue="lucy" style={{ width: 120 }} onChange={this.handleChange.bind(this)}>
-                <Option value="jack">Jack</Option>
-                <Option value="lucy">Lucy</Option>
-                <Option value="disabled" disabled>Disabled</Option>
-                <Option value="Yiminghe">yiminghe</Option>
-              </Select>
+              <FormStatisticDepartmentComponent
+                handleRadioChange={this.handleRadioChange.bind(this)}/>
 
               <Divider />
 
-              {/* 查询结果 -- Table */}
-              <TableEventComponent  tableData={this.state.tableData} onNameClick={this.onTableNameClickCallback}/>
+              {/* 根据Radio不同加载不同内容 */}
+              {
+                this.state.radio == 'overall'?
+                viewOverallCards
+                :
+                viewStaffRateTable
+              }
+
             </Card>
 
           </Content>
