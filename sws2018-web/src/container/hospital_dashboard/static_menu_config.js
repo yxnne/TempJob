@@ -5,6 +5,7 @@ export function getPagePaths(){
     eventCheck:'/dashboard/eventCheck', // 事件查询
     deviceStatusCheck:'/dashboard/deviceStatusCheck', // 设备状态查询
     bizManage:'/dashboard/bizManage', // 业务管理
+    statisticDepartmentRate:'/dashboard/statisticDepartmentRate', // 业务管理
   };
 }
 const paths = getPagePaths();
@@ -48,7 +49,7 @@ const staticMenuInfos = [
     subMenus : [
       {
         title : '依从率分析',
-        linkPath : '/dashboard'
+        linkPath : paths.statisticDepartmentRate
       }, {
         title : '洗手液统计',
         linkPath : '/dashboard'

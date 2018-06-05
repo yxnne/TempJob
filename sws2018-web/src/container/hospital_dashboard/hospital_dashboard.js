@@ -10,6 +10,7 @@ import PageEventCheck from '../event_check/event_check';
 import PageHospitalOverall from '../hospital_overall/hospital_overall';
 import PageDeviceStatusCheck from '../device_status_check/device_status_check';
 import PageBizManage from '../biz_manage/biz_manage';
+import PageStatisticDepartmentRate from '../statistic_department_rate/statistic_department_rate';
 
 import './hospital_dashboard.css';
 
@@ -101,6 +102,7 @@ class PageHospitalDashboard extends React.Component{
                 <Route path={paths.eventCheck} component={PageEventCheck}></Route>
                 <Route path={paths.deviceStatusCheck} component={PageDeviceStatusCheck}></Route>
                 <Route path={paths.bizManage} component={PageBizManage}></Route>
+                <Route path={paths.statisticDepartmentRate} component={PageStatisticDepartmentRate}></Route>
 
               </div>
             </Switch>
