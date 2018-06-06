@@ -1,11 +1,12 @@
 import React from 'react';
-import { Layout, Card, Divider, Select, Row, Col } from 'antd';
+import { Layout, Card, Divider, Select, Row, Col, Tabs } from 'antd';
 import FormStatisticDepartmentComponent from '../../component/form/form_statistic_department/form_statistic_department';
 
 import CardOverallRateComponent from '../../component/card_overall_rate/card_overall_rate';
 import CardOverallTendencyComponent from '../../component/card_overall_tendency/card_overall_tendency';
 import CardOverallOccasionComponent from '../../component/card_overall_occassion/card_overall_occassion';
 import TableDeviceStatusCheckComponent from '../../component/table/table_device_status_check/table_device_status_check';
+import CardsRateStatisticStaffTypeComponent from '../../component/cards_rate_statistic_staff_type/cards_rate_statistic_staff_type';
 
 
 // 假数据生产器
@@ -14,7 +15,7 @@ import { getFakedata_deviceStatus } from '../../util/fake/ui_fakedata_generator'
 
 const { Content, Sider } = Layout;
 const Option = Select.Option;
-
+const TabPane = Tabs.TabPane;
 
 /**
  * 科室，依从率统计
@@ -59,7 +60,7 @@ class PageStatisticDepartmentRate extends React.Component{
   }
 
   render(){
-
+    // 部门整体情况分析
     const viewOverallCards = (
       <div>
         <Row gutter={8}>
@@ -89,10 +90,18 @@ class PageStatisticDepartmentRate extends React.Component{
       </div>
 
     );
+    // 员工依从率表
     const viewStaffRateTable = (
-      <div>
-        <TableDeviceStatusCheckComponent tableData={this.state.tableData} onNameClick={this.onTableNameClickCallback}/>
-      </div>
+
+      <Tabs defaultActiveKey="1" tabPosition="right"  >
+        <TabPane tab="职工" key="1">
+          <TableDeviceStatusCheckComponent tableData={this.state.tableData} onNameClick={this.onTableNameClickCallback}/>
+        </TabPane>
+        <TabPane tab="类型" key="2">
+          <CardsRateStatisticStaffTypeComponent />
+        </TabPane>
+
+      </Tabs>
     );
 
 

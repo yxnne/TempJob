@@ -31,7 +31,7 @@ class CardOverallDepartmentsComponent extends React.Component{
 
     const cardStyle = {
       marginTop:12,
-      borderRadius:6,
+      borderRadius:10,
       minHeight:320
     };
 

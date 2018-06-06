@@ -8,7 +8,7 @@ class CardOverallOccasionComponent extends React.Component{
   render(){
     const cardStyle = {
       marginTop:12,
-      borderRadius:6,
+      borderRadius:10,
       height:156
     };
     const allTimes = this.props.doTimes + this.props.notDoTimes;

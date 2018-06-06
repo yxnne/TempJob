@@ -8,7 +8,7 @@ class CardOverallRateComponent extends React.Component{
   render(){
     const cardStyle = {
       marginTop:12,
-      borderRadius:6,
+      borderRadius:10,
       minHeight:300,
       height:450
     };

@@ -25,7 +25,7 @@ class CardOverallTendencyComponent extends React.Component{
     };
     const cardStyle = {
       marginTop:12,
-      borderRadius:6,
+      borderRadius:10,
       marginRight:20,
       minHeight:300,
       maxHeight:450

@@ -13,7 +13,7 @@ class CardBasicTitleInfoComponent extends React.Component{
     const cardStyle = {
       marginTop:20,
       marginRight:20,
-      borderRadius:6,
+      borderRadius:10,
       paddingLeft:20,
       paddingRight:24,
       paddingTop:16,
