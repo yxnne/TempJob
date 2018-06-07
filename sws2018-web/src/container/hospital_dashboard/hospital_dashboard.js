@@ -11,6 +11,9 @@ import PageHospitalOverall from '../hospital_overall/hospital_overall';
 import PageDeviceStatusCheck from '../device_status_check/device_status_check';
 import PageBizManage from '../biz_manage/biz_manage';
 import PageStatisticDepartmentRate from '../statistic_department_rate/statistic_department_rate';
+import PageStatisticLiquid from '../statisc_liquid_quantity/statisc_liquid_quantity';
+import PageUserManage from '../user_manage/user_manage';
+import PageSetting from '../setting_system/setting_system';
 
 import './hospital_dashboard.css';
 
@@ -103,6 +106,9 @@ class PageHospitalDashboard extends React.Component{
                 <Route path={paths.deviceStatusCheck} component={PageDeviceStatusCheck}></Route>
                 <Route path={paths.bizManage} component={PageBizManage}></Route>
                 <Route path={paths.statisticDepartmentRate} component={PageStatisticDepartmentRate}></Route>
+                <Route path={paths.statisticLiquid} component={PageStatisticLiquid}></Route>
+                <Route path={paths.userManage} component={PageUserManage}></Route>
+                <Route path={paths.setting} component={PageSetting}></Route>
 
               </div>
             </Switch>

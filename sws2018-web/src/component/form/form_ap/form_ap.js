@@ -9,7 +9,7 @@ const dateFormat = 'YYYY/MM/DD';
 /**
  * 表单组件：用于事件查询
  */
-class FormApComponentUnwrapped extends React.Component{
+class FormEventComponentUnwrapped extends React.Component{
 
   constructor(){
     super();
@@ -111,6 +111,6 @@ class FormApComponentUnwrapped extends React.Component{
 }
 
 // 封装表单组件
-const FormApComponent = Form.create()(FormApComponentUnwrapped);
+const FormEventComponent = Form.create()(FormEventComponentUnwrapped);
 
-export default FormApComponent;
+export default FormEventComponent;

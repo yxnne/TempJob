@@ -5,7 +5,10 @@ export function getPagePaths(){
     eventCheck:'/dashboard/eventCheck', // 事件查询
     deviceStatusCheck:'/dashboard/deviceStatusCheck', // 设备状态查询
     bizManage:'/dashboard/bizManage', // 业务管理
-    statisticDepartmentRate:'/dashboard/statisticDepartmentRate', // 业务管理
+    statisticDepartmentRate:'/dashboard/statisticDepartmentRate', // 部门依从率统计
+    statisticLiquid:'/dashboard/statisticLiquid', // 洗手液统计
+    userManage:'/dashboard/userManage', // 用户管理
+    setting:'/dashboard/setting', // 系统设置
   };
 }
 const paths = getPagePaths();
@@ -52,7 +55,7 @@ const staticMenuInfos = [
         linkPath : paths.statisticDepartmentRate
       }, {
         title : '洗手液统计',
-        linkPath : '/dashboard'
+        linkPath : paths.statisticLiquid
       },
     ],
   },{
@@ -70,10 +73,10 @@ const staticMenuInfos = [
     subMenus : [
       {
         title : '用户管理',
-        linkPath : '/dashboard'
+        linkPath : paths.userManage
       }, {
         title : '系统设置',
-        linkPath : '/dashboard'
+        linkPath : paths.setting
       },
     ],
   },{
