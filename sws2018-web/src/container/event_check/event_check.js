@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout, Card, Divider } from 'antd';
 import TableEventComponent from '../../component/table/table_event/table_event';
 import FormEventComponent from '../../component/form/form_event/form_event';
+import PersonalStatisticComponent from '../../component/personal_statistic/personal_statistic';
 
 // 假数据生产器
 import { getFakedata_event } from '../../util/fake/ui_fakedata_generator';
@@ -56,8 +57,8 @@ class PageEventCheck extends React.Component{
             </Card>
 
           </Content>
-          <Sider collapsed={this.state.infoPanelCollaped} collapsedWidth={0} width={400}>
-
+          <Sider collapsed={this.state.infoPanelCollaped} collapsedWidth={0} width={600} style={{backgroundColor:'#f0f2f5'}}>
+            <PersonalStatisticComponent />
           </Sider>
         </Layout>
 
