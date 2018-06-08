@@ -25,7 +25,7 @@ const data = [
 /**
  * 卡片，医院部门依从率排名
  */
-class CardOverallDepartmentsComponent extends React.Component{
+class CardRankDepartmentsComponent extends React.Component{
 
   render(){
 
@@ -59,4 +59,4 @@ class CardOverallDepartmentsComponent extends React.Component{
   }
 }
 
-export default CardOverallDepartmentsComponent;
+export default CardRankDepartmentsComponent;

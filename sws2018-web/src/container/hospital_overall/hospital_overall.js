@@ -5,7 +5,7 @@ import CardBasicTitleInfoComponent from '../../component/card_basic_title_info/c
 import CardOverallRateComponent from '../../component/card_overall_rate/card_overall_rate';
 import CardOverallTendencyComponent from '../../component/card_overall_tendency/card_overall_tendency';
 import CardOverallOccasionComponent from '../../component/card_overall_occassion/card_overall_occassion';
-import CardOverallDepartmentsComponent from '../../component/card_overall_departments/card_overall_departments';
+import CardRankDepartmentsComponent from '../../component/card_rank_departments/card_rank_departments';
 
 
 const { Content } = Layout;
@@ -63,7 +63,7 @@ class PageHospitalOverall extends React.Component{
 
               {/* 科室前五名 */}
               <Col span={10}>
-                <CardOverallDepartmentsComponent />
+                <CardRankDepartmentsComponent />
               </Col>
 
             </Row>

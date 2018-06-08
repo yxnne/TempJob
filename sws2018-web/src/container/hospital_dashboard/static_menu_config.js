@@ -4,10 +4,12 @@ export function getPagePaths(){
     hospitalOverall:'/dashboard/hospitalOverall', // X医院总览
     eventCheck:'/dashboard/eventCheck', // 事件查询
     deviceStatusCheck:'/dashboard/deviceStatusCheck', // 设备状态查询
-    bizManage:'/dashboard/bizManage', // 业务管理
     statisticDepartmentRate:'/dashboard/statisticDepartmentRate', // 部门依从率统计
     statisticLiquid:'/dashboard/statisticLiquid', // 洗手液统计
-    userManage:'/dashboard/userManage', // 用户管理
+    bizManage:'/dashboard/bizManage', // 业务管理
+    deviceQuickCheck:'/dashboard/deviceQuickCheck',// 设备查询
+    apManage:'/dashboard/apManage', // AP管理
+    userManage:'/dashboard/apManage', // 用户管理
     setting:'/dashboard/setting', // 系统设置
   };
 }
@@ -24,6 +26,9 @@ const paths = getPagePaths();
     -- 洗手液统计
   系统业务
     -- 业务管理
+  设备信息
+    -- 设备查询
+    -- AP管理
   系统管理
     -- 用户管理
     -- 系统设置
@@ -66,6 +71,18 @@ const staticMenuInfos = [
         title : '业务管理',
         linkPath : paths.bizManage
       }
+    ],
+  },{
+    icon : 'hdd',
+    title : '设备信息',
+    subMenus : [
+      {
+        title : '设备查询',
+        linkPath : paths.deviceQuickCheck
+      }, {
+        title : '物联网平台管理',
+        linkPath : paths.apManage
+      },
     ],
   },{
     icon : 'usergroup-add',
