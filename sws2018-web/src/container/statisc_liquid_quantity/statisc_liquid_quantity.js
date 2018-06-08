@@ -1,13 +1,9 @@
 import React from 'react';
 import { Layout, Card, Divider, Select, Row, Col, Tabs } from 'antd';
+
 import FormStatisticLiquidComponent from '../../component/form/form_statistic_liquid/form_statistic_liquid';
-import CardOverallRateComponent from '../../component/card_overall_rate/card_overall_rate';
-import CardOverallTendencyComponent from '../../component/card_overall_tendency/card_overall_tendency';
-import CardOverallOccasionComponent from '../../component/card_overall_occassion/card_overall_occassion';
-import TableDeviceStatusCheckComponent from '../../component/table/table_device_status_check/table_device_status_check';
-import CardsRateStatisticStaffTypeComponent from '../../component/cards_rate_statistic_staff_type/cards_rate_statistic_staff_type';
-
-
+import CardOverallQuantityComponent from '../../component/card_overall_quantity/card_overall_quantity';
+import CardTableQuantityComponent from '../../component/card_types_table_quantity/card_types_table_quantity';
 // 假数据生产器
 import { getFakedata_deviceStatus } from '../../util/fake/ui_fakedata_generator';
 
@@ -60,22 +56,6 @@ class PageStatisticLiquid extends React.Component{
 
   render(){
 
-    // 员工依从率表
-    const viewStaffRateTable = (
-
-      <Tabs defaultActiveKey="1" tabPosition="right"  >
-        <TabPane tab="职工" key="1">
-          <TableDeviceStatusCheckComponent tableData={this.state.tableData} onNameClick={this.onTableNameClickCallback}/>
-        </TabPane>
-        <TabPane tab="类型" key="2">
-          <CardsRateStatisticStaffTypeComponent />
-        </TabPane>
-
-      </Tabs>
-    );
-
-
-
     return (
       <div>
         <Layout style={{backgroundColor:'transparent',margin:0, padding:0}}>
@@ -90,29 +70,14 @@ class PageStatisticLiquid extends React.Component{
 
               <Row gutter={8}>
                 {/* 部门总体使用情况 */}
-                <Col span={10}>
-                  <CardOverallRateComponent doTimes={165} notDoTimes={100}/>
+                <Col span={12}>
+                  <CardOverallQuantityComponent doTimes={165} notDoTimes={100}/>
                 </Col>
-                {/* 折线趋势图 */}
-                <Col span={14}>
-                  <CardOverallTendencyComponent />
-                </Col>
-              </Row>
-              <Row gutter={8}>
-                <Col span={6}>
-                  <CardOverallOccasionComponent title="接触患者前" doTimes={50} notDoTimes={90} />
-                </Col>
-                <Col span={6}>
-                  <CardOverallOccasionComponent title="接触患者后" doTimes={150} notDoTimes={30} />
-                </Col>
-                <Col span={6}>
-                  <CardOverallOccasionComponent title="接触患者环境后" doTimes={250} notDoTimes={190} />
-                </Col>
-                <Col span={6}>
-                  <CardOverallOccasionComponent title="离开患者后" doTimes={20} notDoTimes={118} />
+                {/* 表格  */}
+                <Col span={12}>
+                  <CardTableQuantityComponent />
                 </Col>
               </Row>
-
 
             </Card>
 
