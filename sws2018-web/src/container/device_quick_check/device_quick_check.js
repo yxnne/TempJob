@@ -2,21 +2,21 @@ import React from 'react';
 import { Layout, Card, Divider, Tabs, Row, Col } from 'antd';
 
 import OrganizationTreeComponent from '../../component/organization_tree/organization_tree';
-import BtnGroupTableManage from '../../component/btn_group_table_manage/btn_group_table_manage';
-import TableManageUserComponent from '../../component/table/table_manage_user/table_manage_user';
-import { getFakedata_manageUser } from '../../util/fake/ui_fakedata_generator';
+import FormDevicesStatusComponent from '../../component/form/form_device_status/form_device_status';
+import TableDeviceStatusCheckComponent from '../../component/table/table_device_status_check/table_device_status_check';
+import { getFakedata_deviceStatus} from '../../util/fake/ui_fakedata_generator';
 
 const { Content } = Layout;
 const TabPane = Tabs.TabPane;
 /**
- * 业务管理页面
- * 左侧组织树，右侧Tabs
+ * 设备查看页面
+ * 左侧组织树 右侧表
  */
-class PageUserManage extends React.Component{
+class PageDeviceQuickCheck extends React.Component{
   constructor(){
     super();
     this.state = {
-      staffDatas:getFakedata_manageUser(25),
+      tableData:getFakedata_deviceStatus(25),
     };
     this.handelOnTabsChange = this.handelOnTabsChange.bind(this);
   }
@@ -42,9 +42,14 @@ class PageUserManage extends React.Component{
                 </Col>
 
                 <Col span={20} style={{paddingLeft:32, paddingRight:32}}>
-                  {/* 用户管理 */}
-                  <BtnGroupTableManage />
-                  <TableManageUserComponent tableData={this.state.staffDatas}/>
+                  {/* 查询条件 表单 */}
+                  <FormDevicesStatusComponent />
+
+                  <Divider />
+
+                  {/* 查询结果 -- Table */}
+                  <TableDeviceStatusCheckComponent  tableData={this.state.tableData} onNameClick={this.onTableNameClickCallback}/>
+
                 </Col>
               </Row>
             </Card>
@@ -57,4 +62,4 @@ class PageUserManage extends React.Component{
 
 }
 
-export default PageUserManage;
+export default PageDeviceQuickCheck;

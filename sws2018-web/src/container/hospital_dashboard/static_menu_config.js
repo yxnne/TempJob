@@ -9,7 +9,7 @@ export function getPagePaths(){
     bizManage:'/dashboard/bizManage', // 业务管理
     deviceQuickCheck:'/dashboard/deviceQuickCheck',// 设备查询
     apManage:'/dashboard/apManage', // AP管理
-    userManage:'/dashboard/apManage', // 用户管理
+    userManage:'/dashboard/userManage', // 用户管理
     setting:'/dashboard/setting', // 系统设置
   };
 }

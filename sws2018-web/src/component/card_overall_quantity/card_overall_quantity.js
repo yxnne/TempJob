@@ -77,9 +77,7 @@ class CardOverallQuantityComponent extends React.Component{
               showTitle={false}
               itemTpl='<li><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>'
               />
-            <Guide >
-              <Html position ={[ '50%', '50%' ]} html='<div style="color:#8c8c8c;font-size:1.16em;text-align: center;width: 10em;">主机<br><span style="color:#262626;font-size:2.5em">200</span>台</div>' alignX='middle' alignY='middle'/>
-            </Guide>
+
             <Geom
               type="intervalStack"
               position="percent"

@@ -4,20 +4,20 @@ import TableApComponent from '../../component/table/table_ap/table_ap';
 import FormApComponent from '../../component/form/form_ap/form_ap';
 
 // 假数据生产器
-import { getFakedata_event } from '../../util/fake/ui_fakedata_generator';
+import { getFakedata_manageAp } from '../../util/fake/ui_fakedata_generator';
 
 const { Content, Sider } = Layout;
 
 /**
  * AP查询页
  */
-class PageApCheck extends React.Component{
+class PageApCheckManage extends React.Component{
 
   constructor(){
     super();
     this.state = {
       infoPanelCollaped:true,
-      tableData:getFakedata_event(50),
+      tableData:getFakedata_manageAp(15),
     };
 
     this.toggle = this.toggle.bind(this);
@@ -42,12 +42,12 @@ class PageApCheck extends React.Component{
     return (
       <div>
         <Layout style={{backgroundColor:'transparent',margin:0, padding:0}}>
-          <Content style={{margin:0, padding:0}}>  
+          <Content style={{margin:0, padding:0}}>
 
             <Card style={{marginTop:20, marginRight:20, borderRadius:6}}>
 
               {/* 查询条件 表单 */}
-              <FormEventComponent />
+              <FormApComponent />
 
               <Divider />
 
@@ -56,7 +56,7 @@ class PageApCheck extends React.Component{
             </Card>
 
           </Content>
-          <Sider collapsed={this.state.infoPanelCollaped} collapsedWidth={0} width={400}>
+          <Sider collapsed={this.state.infoPanelCollaped} collapsedWidth={0} width={400} >
 
           </Sider>
         </Layout>
@@ -66,4 +66,4 @@ class PageApCheck extends React.Component{
   }
 }
 
-export default PageApCheck;
+export default PageApCheckManage;

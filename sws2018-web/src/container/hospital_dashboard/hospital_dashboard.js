@@ -12,6 +12,8 @@ import PageDeviceStatusCheck from '../device_status_check/device_status_check';
 import PageBizManage from '../biz_manage/biz_manage';
 import PageStatisticDepartmentRate from '../statistic_department_rate/statistic_department_rate';
 import PageStatisticLiquid from '../statisc_liquid_quantity/statisc_liquid_quantity';
+import PageApCheckManage from '../ap_check_manage/ap_check_manage';
+import PageDeviceQuickCheck from '../device_quick_check/device_quick_check';
 import PageUserManage from '../user_manage/user_manage';
 import PageSetting from '../setting_system/setting_system';
 
@@ -107,6 +109,8 @@ class PageHospitalDashboard extends React.Component{
                 <Route path={paths.bizManage} component={PageBizManage}></Route>
                 <Route path={paths.statisticDepartmentRate} component={PageStatisticDepartmentRate}></Route>
                 <Route path={paths.statisticLiquid} component={PageStatisticLiquid}></Route>
+                <Route path={paths.deviceQuickCheck} component={PageDeviceQuickCheck}></Route>
+                <Route path={paths.apManage} component={PageApCheckManage}></Route>
                 <Route path={paths.userManage} component={PageUserManage}></Route>
                 <Route path={paths.setting} component={PageSetting}></Route>
 

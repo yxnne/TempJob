@@ -87,3 +87,60 @@ export function getFakedata_manageStaff(num){
   }
   return datas;
 }
+
+
+/**
+ * User假数据,一般，管理，职工页面会用到
+ */
+export function getFakedata_manageUser(num){
+  const fakeFamilyNames = ['张', '王', '李', '公孙', '吴', '钱', '范'];
+  const fakeSecondNames = ['国荣', '祖贤', '冰冰', '殃', '建豪', '学森', '仲淹'];
+  const fakeNo = ['M0001', 'W00002', '000008', '110008', 'M0005', '000001', '006606'];
+  const fakePhone = ['13557894562', '15901069872', '15109113766', '13888668321', '13550114562', '13999874300', '13557894562'];
+  const fakeRole = ['医生', '护士', '护士', '其他'];
+
+  let datas = [];
+  for(let i = 0; i < num; i++ ){
+    let r1 = Math.random();
+    let r2 = Math.random();
+    let r_fname = Math.floor(r1 * fakeFamilyNames.length);
+    let r_sname = Math.floor(r2 * fakeSecondNames.length);
+    let r_role = Math.floor(r1 * fakeRole.length);
+    let name = fakeFamilyNames[r_fname] + fakeSecondNames[r_sname];
+    datas.push({
+      name:name,
+      r_staff:name,
+      r_wx:`000${i*100 + (i + 1)}`,
+      phone:fakePhone[r_role],
+      auth:'查看或变更',
+      remark:''
+    });
+
+  }
+  return datas;
+}
+
+/**
+ * AP manage假数据
+ */
+export function getFakedata_manageAp(num){
+  const apNames = ['AP0001', 'AP9528', 'AP0002', 'ApMain1', 'AP003', 'WHAP0001', 'AP'];
+  const apIMEI = ['defdc44561548defdc44561548', 'defdc44561548defdc44561548', 'defdc44561548defdc44561548defdc44561548defdc44561548', 'defdc44561548', 'defdc44561548', 'defdc44561548', 'defdc44561548'];
+  const apStatus = ['连接', '断开', '断开', '连接', '连接', '连接', '连接'];
+  const apTime = ['2018-1-9 16:45:20', '2018-1-9 16:45:20', '2018-1-9 16:45:20', '2018-1-9 16:45:20', '2018-1-9 16:45:20', '2018-1-9 16:45:20', '2018-1-9 16:45:20'];
+
+  let datas = [];
+  for(let i = 0; i < num; i++ ){
+    let r = Math.floor(Math.random() * apNames.length);
+
+    datas.push({
+      name:apNames[r],
+      imei:apIMEI[r],
+      status:apStatus[r],
+      last_com_time:apTime[r],
+      remark:''
+    });
+
+  }
+  return datas;
+}

@@ -38,18 +38,18 @@ class FormEventComponentUnwrapped extends React.Component{
 
             {/* 职工查询框  */}
             <Col span={8}>
-              <FormItem {...formItemLayout} label="职工">
+              <FormItem {...formItemLayout} label="设备">
                 {getFieldDecorator('name', {
                   rules: [],
                 })(
-                  <Input placeHolder='请输入职工姓名或工号'/>
+                  <Input placeHolder='请输入职设备名或IMEI码'/>
                 )}
               </FormItem>
             </Col>
 
             {/* 时间选择查询框  */}
             <Col span={8}>
-              <FormItem {...formItemLayout} label="时间">
+              <FormItem {...formItemLayout} label="上报时间">
                 {getFieldDecorator('time', {
                   rules: [],
                 })(
@@ -62,22 +62,6 @@ class FormEventComponentUnwrapped extends React.Component{
           </Row>
 
           <Row gutter={16}>
-            {/* 事件选择查询框  */}
-            <Col span={8}>
-              <FormItem {...formItemLayout} label="事件">
-                {getFieldDecorator('event', {
-                  rules: [],
-                })(
-                  <Select placeholder='请选择查询事件'>
-                    <Option value="进入病区">进入病区</Option>
-                    <Option value="手卫生完成">手卫生完成</Option>
-                    <Option value="解除患者" >解除患者</Option>
-                    <Option value="未手卫生">未手卫生</Option>
-                  </Select>
-                )}
-              </FormItem>
-            </Col>
-
             {/* 状态选择查询框  */}
             <Col span={8}>
               <FormItem {...formItemLayout} label="状态">
@@ -85,13 +69,17 @@ class FormEventComponentUnwrapped extends React.Component{
                   rules: [],
                 })(
                   <Select placeholder='请选择手卫生状态'>
-                    <Option value="清洁">清洁</Option>
-                    <Option value="不清洁">不清洁</Option>
+                    <Option value="全部">全部</Option>
+                    <Option value="链接">链接</Option>
+                    <Option value="断开">断开</Option>
 
                   </Select>
                 )}
               </FormItem>
             </Col>
+
+
+            <Col span={8} />
 
             <Col span={8} >
               <FormItem >

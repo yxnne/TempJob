@@ -45,19 +45,11 @@ class PageSetting extends React.Component{
 
             <Card style={{marginTop:20, marginRight:20, borderRadius:6}}>
 
-              {/* 查询条件 表单 */}
-              <FormEventComponent />
-
-              <Divider />
-
-              {/* 查询结果 -- Table */}
-              <TableEventComponent  tableData={this.state.tableData} onNameClick={this.onTableNameClickCallback}/>
+              系统设置
             </Card>
 
           </Content>
-          <Sider collapsed={this.state.infoPanelCollaped} collapsedWidth={0} width={400}>
 
-          </Sider>
         </Layout>
 
       </div>

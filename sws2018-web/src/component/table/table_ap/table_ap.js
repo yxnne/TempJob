@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from 'antd';
+import { Table, Button } from 'antd';
 import PropTypes from 'prop-types';
 
  /**
@@ -10,55 +10,48 @@ class TableApComponent extends React.Component{
   render(){
     // 表头定义
     const columns = [{
-        title: '姓名',
+        title: '设备名',
         dataIndex: 'name',
         key: 'name',
         sorter: (a, b) => a.name - b.name,
         render: (text, record)  => <a onClick={()=>this.props.onNameClick(record)}>{text}</a>,
       }, {
-        title: '工号',
-        dataIndex: 'no',
-        key: 'no',
-        sorter: (a, b) => a.no - b.no,
-      }, {
-        title: 'RFID',
-        dataIndex: 'rfid',
-        key: 'rfid',
-        sorter: (a, b) => a.rfid - b.rfid,
-      }, {
-        title: '事件',
-        dataIndex: 'event',
-        key: 'event',
-        filters: [{
-          text: '执行手卫生',
-          value: '执行手卫生',
-        }, {
-          text: '等等',
-          value: '等等',
-        }],
-        sorter: (a, b) => a.event - b.event,
+        title: 'IMEI码',
+        dataIndex: 'imei',
+        key: 'imei',
+        sorter: (a, b) => a.imei - b.imei,
       }, {
         title: '状态',
         dataIndex: 'status',
         key: 'status',
-        sorter: (a, b) => a.status - b.status,
         filters: [{
-          text: '清洁',
-          value: '清洁',
+          text: '全部',
+          value: '全部',
         }, {
-          text: '不清洁',
-          value: '不清洁',
+          text: '链接',
+          value: '断开',
         }],
-        onFilter: (value, record) => record.status.indexOf(value) === 0,
+        sorter: (a, b) => a.status - b.status,
       }, {
-        title: '时间',
-        dataIndex: 'time',
-        key: 'time',
-        sorter: (a, b) => a.time - b.time,
+        title: '最后通信时间',
+        dataIndex: 'last_com_time',
+        key: 'last_com_time',
+        sorter: (a, b) => a.last_com_time - b.last_com_time,
       }, {
         title: '备注',
         dataIndex: 'remark',
         key: 'remark',
+      } , {
+        title: '操作',
+        key: 'action',
+        width: 360,
+        render: (text, record) => (
+          <span>
+            <Button size="small" type="primary" style={{marginRight:12}} onClick={()=>this.props.onStatisticClick(record)}>统计流量</Button>
+            <Button size="small" type="danger" style={{marginRight:12}} onClick={()=>this.props.onCutClick(record)}>断开链接</Button>
+            <Button size="small" type="ghost" style={{marginRight:12}} onClick={()=>this.props.onDetailClick(record)}>详细记录</Button>
+          </span>
+        ),
       }];
 
     return (
