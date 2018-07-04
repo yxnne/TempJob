@@ -1,10 +1,10 @@
 import { compose, applyMiddleware, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 // reducers import
-
+import {reducer as organizationStatistic } from './module/organization_statistic';
 
 // combine the reducers
-const reducers =  combineReducers({  });
+const reducers =  combineReducers({ organizationStatistic });
 
 // add redux debug tool reduxDevTool
 const reduxDevTool = window.__REDUX_DEVTOOLS_EXTENSION__?window.__REDUX_DEVTOOLS_EXTENSION__():f=>f;
