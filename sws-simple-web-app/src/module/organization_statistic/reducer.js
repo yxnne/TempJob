@@ -2,6 +2,7 @@ import * as actions from './actiontype'
 
 const initState = {
   name:'hospital',
+  totalTimes:201,
   roleTimes:[
     { role: '医生', times: 40 },
     { role: '护士', times: 21 },

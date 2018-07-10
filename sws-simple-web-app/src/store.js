@@ -1,10 +1,14 @@
 import { compose, applyMiddleware, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 // reducers import
-import {reducer as organizationStatistic } from './module/organization_statistic';
+import { reducer as organizationStatistic } from './module/organization_statistic';
+import { reducer as departmentListStatistic } from './module/department_list';
 
 // combine the reducers
-const reducers =  combineReducers({ organizationStatistic });
+const reducers =  combineReducers({ 
+  organizationStatistic,
+  departmentListStatistic 
+});
 
 // middlewares
 const middlewares = [thunk];

@@ -8,6 +8,8 @@ import { testAction } from '../action';
 
 @connect(
   state => ({
+    name:state.organizationStatistic.name,
+    totalTimes:state.organizationStatistic.totalTimes,
     roleTimesData:state.organizationStatistic.roleTimes,
     weekTimesData:state.organizationStatistic.weekTimes,
   }), 
@@ -24,7 +26,6 @@ export default class Container extends Component {
         module container here
         <WhiteSpace size="lg" />
 
-
         <Card>
           <Card.Header title="近一周执行情况" />
           <Card.Body>
@@ -32,9 +33,9 @@ export default class Container extends Component {
           <Flex>
             {/* 近一周执行 总次数 */}
             <Flex.Item>
-              &nbsp;&nbsp;共有人数XXX人
+              &nbsp;{this.props.name}
               <br/><br/>
-              &nbsp;&nbsp;洗手<span>1234</span>次            
+              &nbsp;共计洗手<span style={{fontSize:20}}>&nbsp;{this.props.totalTimes}</span>次            
               
             </Flex.Item>
             
