@@ -23,11 +23,10 @@ export default class Container extends Component {
   render() {
     return (
       <div>
-        module container here 
         <WhiteSpace size="lg" />
 
         <Card>
-          <Card.Header title="近一周执行情况" />
+          <Card.Header title={this.props.overallTitle} />
           <Card.Body>
             
           <Flex>
@@ -56,7 +55,7 @@ export default class Container extends Component {
         <WhiteSpace size="lg" />
         {/* 近一周执行次数 柱状图 */}
         <Card>
-          <Card.Header title="执行次数每日趋势" />
+          <Card.Header title={this.props.tendencyTitle} />
           <Card.Body>
             <WeekTimesBarChart height={200} data={this.props.weekTimesData}/>
           </Card.Body>

@@ -16,7 +16,7 @@ export default class Container extends Component {
       <div>
         <WhiteSpace size="lg" />
         <Card>
-          <Card.Header title="执行次数每日趋势" />
+          <Card.Header title={this.props.title} />
           <Card.Body>
             <RankList dataList={ this.props.rankLists } type={ TYPE_DEPARTMENT }/> 
           </Card.Body>
