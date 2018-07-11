@@ -4,6 +4,8 @@ import { StickyContainer, Sticky } from 'react-sticky';
 import { view as StaffRanks } from '../module/staffRate_list';
 import { view as DepartmentRanks } from '../module/department_list';
 
+import CheckCondition from '../component/checkCondition/CheckCondition';
+
 // 固定Tab
 function renderTabBar(props) {
   return (<Sticky>
@@ -27,6 +29,14 @@ const containerStyle = {
 };
 
 export default class AdminRankPage extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+
+    };
+  }
+
   render() {
     return (
       <div>
@@ -38,6 +48,7 @@ export default class AdminRankPage extends Component {
             
             {/* 第一个Tab内容 -- 部门排名 */}
             <div style={containerStyle}>
+              
               <WingBlank>
                 <DepartmentRanks title="一周科室排名"/>
               </WingBlank>
@@ -45,6 +56,7 @@ export default class AdminRankPage extends Component {
 
             {/* 第一个Tab内容 -- 员工排名 */}
             <div style={containerStyle}>
+              <CheckCondition isDepartmentrequired />
               <WingBlank>
                 <StaffRanks title="全院一周员工排名"/>
               </WingBlank>
