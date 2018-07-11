@@ -3,6 +3,10 @@ import { List } from 'antd-mobile';
 import PropTypes from 'prop-types'
 import IconRank from '../iconRank/IconRank'
 
+// 定义下类型
+const TYPE_DEPARTMENT = 'TYPE_DEPARTMENT';
+const TYPE_STAFF = 'TYPE_STAFF';
+
 const Item = List.Item;
 // rank样式
 const makeAvatar = (rank, bgColor, textColor) =>(
@@ -10,7 +14,7 @@ const makeAvatar = (rank, bgColor, textColor) =>(
 );
 
 // 内容样式
-const makeContent = (name, times) =>{
+const makeDepartmentContent = (name, times) =>{
   return (
     <div style={{display:'table', width:'100%'}}>
       <div style={{display:'table-row',  width:'100%'}}>
@@ -19,6 +23,25 @@ const makeContent = (name, times) =>{
         </div>
         <div style={{marginLeft:12, display:'table-cell',  width:'40%'}}>
         {times}<span style={{fontSize:12, marginLeft:32}}>次</span>
+        </div>
+      </div>
+    </div>
+
+  );
+};
+
+const makeStaffContent = (name, role, times) =>{
+  return (
+    <div style={{display:'table', width:'100%'}}>
+      <div style={{display:'table-row',  width:'100%'}}>
+        <div style={{marginLeft:12, display:'table-cell',  width:'40%'}}>
+        {name}
+        </div>
+        <div style={{marginLeft:12, display:'table-cell',  width:'30%'}}>
+        {role}
+        </div>
+        <div style={{marginLeft:12, display:'table-cell',  width:'30%'}}>
+        {times}<span style={{fontSize:12, marginLeft:8}}>次</span>
         </div>
       </div>
     </div>
@@ -37,7 +60,11 @@ class RankList extends Component {
               <Item thumb={makeAvatar(item.rank, "#0000ff", "white")} key={item.rank}
                 arrow="horizontal" onClick={f=>f}>
 
-                { makeContent(item.name, item.times) }
+                { 
+                  this.props.type === TYPE_DEPARTMENT?
+                  makeDepartmentContent(item.name, item.times)
+                  :makeStaffContent(item.name, item.role ,item.times)
+                }
               </Item>
             ))
           }
@@ -46,8 +73,10 @@ class RankList extends Component {
     )
   }
 }
+
 RankList.propTypes = {
-  dataList:PropTypes.array.isRequired
+  dataList:PropTypes.array.isRequired,
+  type:PropTypes.string.isRequired,
 };
 
-export default RankList;
+export { RankList, TYPE_DEPARTMENT, TYPE_STAFF } ;
