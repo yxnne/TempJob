@@ -73,7 +73,7 @@ class CheckCondition extends Component {
       textAlign:'center', 
       marginTop:30,
       marginBottom:10,
-      color:'#333333'
+      color:'#33A3F4'
     };
     const hideBtn = (
       <div style={{margin:12, marginRight:12}} onClick={this.toggleConditionHide}>隐藏条件选择</div>
