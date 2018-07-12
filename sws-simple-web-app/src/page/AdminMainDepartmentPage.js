@@ -3,8 +3,9 @@ import { WingBlank, WhiteSpace } from 'antd-mobile';
 import { view as OrganizationStatistic } from '../module/organization_statistic';
 import { view as StaffRanks } from '../module/staffRate_list';
 import BackToTop from '../component/backToTop/BackToTop';
+import * as constants from '../constant';
 
-const BACK_PATH = '/hospitalOverall';
+const BACK_PATH = constants.PATH_HOSPITAL_OVERALL;
 
 /** 部门主页 */
 export default class AdminMainDepartmentPage extends Component {

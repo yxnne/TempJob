@@ -5,15 +5,17 @@ import NavTab from '../component/navTab/NavTab';
 import AdminMainHospitalPage from './AdminMainHospitalPage';
 import AdminRankPage from './AdminRankPage';
 
+import * as constants from '../constant';
+
 const pageList = [
   {
-    path:'/hospitalOverall',
+    path:constants.PATH_HOSPITAL_OVERALL,
     component:AdminMainHospitalPage,
     title:'概览',
     icon:'overall',
   },
   {
-    path:'/hospitalrank',
+    path:constants.PATH_HOSPITAL_RANK,
     component:AdminRankPage,
     title:'排名',
     icon:'rank',

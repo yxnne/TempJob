@@ -8,6 +8,8 @@ import './index.css';
 import AdminMainDepartmentPage from './page/AdminMainDepartmentPage';
 import AdminMainTabBar from './page/AdminMainTabBar'
 
+import * as constant from './constant';
+
 import registerServiceWorker from './registerServiceWorker';
 
 
@@ -22,8 +24,8 @@ ReactDOM.render(
 
           <Switch>
             {/* here Routes */}
-            <Route path='/departmentOverall/:rank' component={AdminMainDepartmentPage}/>
-
+            
+            <Route path={`${constant.PATH_DEPARTMENT_OVERALL}/:rank`} component={AdminMainDepartmentPage}/>
             
             {/* to Tabs Navigation */}
             <Route component={AdminMainTabBar}/>
