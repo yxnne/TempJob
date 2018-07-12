@@ -56,7 +56,7 @@ export default class AdminRankPage extends Component {
 
             {/* 第一个Tab内容 -- 员工排名 */}
             <div style={containerStyle}>
-              <CheckCondition isDepartmentrequired />
+              <CheckCondition isDepartmentrequired checkCallback={f=>f}/>
               <WingBlank>
                 <StaffRanks title="全院一周员工排名"/>
               </WingBlank>

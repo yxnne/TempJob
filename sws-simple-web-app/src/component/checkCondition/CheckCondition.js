@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import { createForm } from 'rc-form';
 import { Card, WhiteSpace,  DatePicker, List, Button, Checkbox } from 'antd-mobile';
-
+import PropTypes from 'prop-types';
 import { CheckButton } from '../buttons/Buttons';
 
 const CheckboxItem =  Checkbox.CheckboxItem;
@@ -20,12 +20,22 @@ class CheckCondition extends Component {
     super(props);
 
     this.state = {
-      start:"",
-      end:"",
-      departData:departData
+      conditionHide: true,//是否隐藏
+      start:"", // 开始时间
+      end:"",   // 结束时间
+      departData:departData   // 部门列表
     };
 
-    this.onDepartmentSelected.bind(this);
+    this.onDepartmentSelected = this.onDepartmentSelected.bind(this);
+    this.toggleConditionHide = this.toggleConditionHide.bind(this);
+    this.onCheckClick = this.onCheckClick.bind(this);
+  }
+
+  toggleConditionHide(){
+    const hide = this.state.conditionHide;
+    this.setState({
+      conditionHide:!hide
+    });
   }
 
   onDepartmentSelected(value){
@@ -41,64 +51,96 @@ class CheckCondition extends Component {
     this.setState({
       departData:newDepartData
     });
+  }
 
+  onCheckClick(){
+    console.log("this.state.start", this.state.start )
+    console.log("this.state.end", this.state.end )
+    console.log("this.state.departData", this.state.departData )
+
+    if(this.props.checkCallback ){
+      // 这里具体的形式待定
+      this.props.checkCallback(this.state.start, this.state.end, this.state.departData )
+    }
   }
 
   render() {
+    // 是否隐藏
+    const conditionStyle = this.state.conditionHide?{display:'none'}:{};
+    const triggerDisplay = this.state.conditionHide?{}:{display:'none'};
+    const triggerStyle = {
+      ...triggerDisplay,
+      textAlign:'center', 
+      marginTop:30,
+      marginBottom:10,
+      color:'#333333'
+    };
     const hideBtn = (
-      <div style={{margin:6, marginRight:12}} onClick={f=>console.log('click hide')}>隐藏</div>
+      <div style={{margin:12, marginRight:12}} onClick={this.toggleConditionHide}>隐藏条件选择</div>
     );
-    //const { getFieldProps } = this.props.form;
+
     return (
-      
 
       <div>
-        <WhiteSpace size="lg" />
-        <Card full>
-          <Card.Body>
-            <List renderHeader={() => '选择查询时间'} style={{ backgroundColor: 'white' }}>
-        
-              <DatePicker mode="date"
-                title="选择开始时间" extra="Optional"
-                value={this.state.start} onChange={start => this.setState({ start })} >
-                <List.Item arrow="horizontal">开始时间</List.Item>
-              </DatePicker>
+        <div style={triggerStyle} onClick={this.toggleConditionHide}>
 
-              <DatePicker mode="date"
-                title="选择结束时间" extra="Optional"
-                value={this.state.end} onChange={end => this.setState({ end })} >
-                <List.Item arrow="horizontal">结束时间</List.Item>
-              </DatePicker>
+          查询条件选择
 
-              {
-                this.props.isDepartmentrequired?
-                (
-                  <List renderHeader={() => '选择查询科室'}>
-                    {this.state.departData.map(i => (
-                      <CheckboxItem checked={i.checked} key={i.value} onChange={() => this.onDepartmentSelected(i.value)}>
-                        {i.name}
-                      </CheckboxItem>
-                    ))}
-                    
-                  </List>
-                ):(null)
-              }
+        </div>
 
-            </List>
-            <WhiteSpace size="lg" />
-            <CheckButton style={{marginLeft:48, marginRight:48}} 
-            type="ghost" size="small" onClick={()=>console.log('abc')}>
-              查&nbsp;询
-            </CheckButton>
-            
-            <WhiteSpace />
-          </Card.Body>
-          <Card.Footer content={null} extra={hideBtn} />
-        </Card>
+        <div style={conditionStyle}>
+          <WhiteSpace size="lg" />
+          <Card full>
+            <Card.Body>
+              <List renderHeader={() => '选择查询时间'} style={{ backgroundColor: 'white' }}>
+          
+                <DatePicker mode="date"
+                  title="选择开始时间" extra="Optional"
+                  value={this.state.start} onChange={start => this.setState({ start })} >
+                  <List.Item arrow="horizontal">开始时间</List.Item>
+                </DatePicker>
+
+                <DatePicker mode="date"
+                  title="选择结束时间" extra="Optional"
+                  value={this.state.end} onChange={end => this.setState({ end })} >
+                  <List.Item arrow="horizontal">结束时间</List.Item>
+                </DatePicker>
+
+                {
+                  this.props.isDepartmentrequired?
+                  (
+                    <List renderHeader={() => '选择查询科室'}>
+                      {this.state.departData.map(i => (
+                        <CheckboxItem checked={i.checked} key={i.value} onChange={() => this.onDepartmentSelected(i.value)}>
+                          {i.name}
+                        </CheckboxItem>
+                      ))}
+                      
+                    </List>
+                  ):(null)
+                }
+
+              </List>
+              <WhiteSpace size="lg" />
+              <CheckButton style={{marginLeft:48, marginRight:48}} 
+              type="ghost" size="small" onClick={this.onCheckClick}>
+                查&nbsp;询
+              </CheckButton>
+              
+              <WhiteSpace />
+            </Card.Body>
+            <Card.Footer content={null} extra={hideBtn} />
+          </Card>
+
+        </div>
 
       </div>
     )
   }
 }
+
+CheckCondition.propTypes = {
+  checkCallback:PropTypes.func.isRequired
+};
 
 export default CheckCondition;
