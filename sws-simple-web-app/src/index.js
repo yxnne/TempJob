@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import './index.css';
 // pages imports
-import AdminMainHospitalPage from './page/AdminMainHospitalPage';
+import AdminMainDepartmentPage from './page/AdminMainDepartmentPage';
 import AdminMainTabBar from './page/AdminMainTabBar'
 
 import registerServiceWorker from './registerServiceWorker';
@@ -22,7 +22,7 @@ ReactDOM.render(
 
           <Switch>
             {/* here Routes */}
-            <Route path='/home' component={AdminMainHospitalPage}/>
+            <Route path='/departmentOverall/:rank' component={AdminMainDepartmentPage}/>
 
             
             {/* to Tabs Navigation */}

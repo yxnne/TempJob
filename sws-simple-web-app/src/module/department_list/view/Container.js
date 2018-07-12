@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import { RankList, TYPE_DEPARTMENT } from '../../../component/rankList/RankList';
 
+const JUMP_PATH_TO_DEPARTMENT_STATISTIC_PAGE = '/departmentOverall';
+
 @connect(
   (state)=>({ 
     rankLists:state.departmentListStatistic.list
@@ -18,7 +20,8 @@ export default class Container extends Component {
         <Card>
           <Card.Header title={this.props.title} />
           <Card.Body>
-            <RankList dataList={ this.props.rankLists } type={ TYPE_DEPARTMENT }/> 
+            <RankList dataList={ this.props.rankLists } type={ TYPE_DEPARTMENT } 
+            jumpPath={JUMP_PATH_TO_DEPARTMENT_STATISTIC_PAGE}/> 
           </Card.Body>
           <Card.Footer content={null}  />
         </Card>

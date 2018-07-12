@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { List } from 'antd-mobile';
 import PropTypes from 'prop-types'
-import IconRank from '../iconRank/IconRank'
+import IconRank from '../iconRank/IconRank';
+import { withRouter } from 'react-router-dom';
 
 // 定义下类型
 const TYPE_DEPARTMENT = 'TYPE_DEPARTMENT';
@@ -50,7 +51,16 @@ const makeStaffContent = (name, role, times) =>{
 };
 
 /** 组件：排名列表 */
+@withRouter
 class RankList extends Component {
+
+  onItemClick(rank){
+    const path = this.props.jumpPath;
+    if(path){
+      this.props.history.push(`${path}/${rank}`);
+    }
+  }
+
   render() {
     return (
       <div>
@@ -58,7 +68,7 @@ class RankList extends Component {
           {
             this.props.dataList.map(item => (
               <Item thumb={makeAvatar(item.rank, "#0000ff", "white")} key={item.rank}
-                arrow="horizontal" onClick={f=>f}>
+                arrow="horizontal" onClick={()=>this.onItemClick(item.rank)}>
 
                 { 
                   this.props.type === TYPE_DEPARTMENT?
