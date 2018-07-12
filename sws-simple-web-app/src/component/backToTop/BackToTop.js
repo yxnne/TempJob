@@ -8,6 +8,7 @@ const commenStyle = {
   lineHeight:'32px',
   color:'#33A3F4',
   fontSize:16,
+  paddingBottom:4
 }
 
 /** 返回上一级 */
