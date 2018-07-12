@@ -18,18 +18,23 @@ export default class StaffDetailPage extends Component {
 
         <div style={{display:'table', width:'100%'}}>
           <div style={{display:'table-row',width:'100%'}}>
-            <div style={{display:'table-cell',width:'10%'}}>
-
+            <div style={{display:'table-cell',width:'12%', verticalAlign: 'middle' }}>
+              <div style={{margin:'0 auto', width:20, height:40 }} onClick={()=>console.log('front')}>
+                <img style={{width:18, height:18}} 
+                src={require('./image/front.svg')} alt=''/>
+              </div>
 
             </div>
 
-            <div style={{display:'table-cell',  width:'80%'}}>
+            <div style={{display:'table-cell',  width:'76%'}}>
               <StaffDetailCard />
             </div>
 
-            <div style={{display:'table-cell', width:'10%'}}>
-
-
+            <div style={{display:'table-cell', width:'12%',  verticalAlign: 'middle' }}>
+              <div style={{margin:'0 auto', width:20, height:40}} onClick={()=>console.log('back')}>
+                <img style={{width:18, height:18}} 
+                src={require('./image/back.svg')} alt=''/>  
+              </div>
             </div>
 
 

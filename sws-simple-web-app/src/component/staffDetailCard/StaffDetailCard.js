@@ -11,8 +11,6 @@ const infoContainer = { textAlign:'center', fontSize:18};
 const infoItemStyle = { margin:'10px auto', fontSize:18, paddingTop:4 };
 const mainTimesTextStyle = { fontSize:32, margin:'0px 8px'};
 
-
-
 const makeDetailContent = (position, times) =>{
   return (
     <div style={{display:'table', width:'100%'}}>
