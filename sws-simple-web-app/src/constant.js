@@ -8,3 +8,6 @@ export const PATH_DEPARTMENT_OVERALL = '/departmentOverall';
 
 // 排名页面
 export const PATH_HOSPITAL_RANK = '/hospitalrank';
+
+// 个人详情
+export const PATH_STAFF_DETAIL = '/staffDetail';

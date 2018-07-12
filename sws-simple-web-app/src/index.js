@@ -7,6 +7,7 @@ import './index.css';
 // pages imports
 import AdminMainDepartmentPage from './page/AdminMainDepartmentPage';
 import AdminMainTabBar from './page/AdminMainTabBar'
+import StaffDetailPage from './page/StaffDetailPage'
 
 import * as constant from './constant';
 
@@ -26,7 +27,8 @@ ReactDOM.render(
             {/* here Routes */}
             
             <Route path={`${constant.PATH_DEPARTMENT_OVERALL}/:rank`} component={AdminMainDepartmentPage}/>
-            
+            <Route path={`${constant.PATH_STAFF_DETAIL}/:rank`} component={StaffDetailPage}/>
+
             {/* to Tabs Navigation */}
             <Route component={AdminMainTabBar}/>
           </Switch>

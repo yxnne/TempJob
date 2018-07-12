@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 import { RankList, TYPE_DEPARTMENT } from '../../../component/rankList/RankList';
 
-const JUMP_PATH_TO_DEPARTMENT_STATISTIC_PAGE = '/departmentOverall';
+import * as constants from '../../../constant';
+const JUMP_PATH_TO_DEPARTMENT_STATISTIC_PAGE = constants.PATH_DEPARTMENT_OVERALL;
 
 @connect(
   (state)=>({ 
