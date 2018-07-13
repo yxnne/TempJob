@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { createForm } from 'rc-form';
-import { Card, WhiteSpace,  DatePicker, List, Button, Checkbox } from 'antd-mobile';
+import { Card, WhiteSpace,  DatePicker, List, Checkbox } from 'antd-mobile';
 import PropTypes from 'prop-types';
 import { CheckButton } from '../buttons/Buttons';
 

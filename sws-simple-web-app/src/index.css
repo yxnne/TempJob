@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-/* fix the tabbar at the bottom */
+/* 固定底部Tab */
 .am-tab-bar{
   position: fixed;
   bottom: 0;
@@ -27,4 +27,17 @@ body {
 }
 .tab_center_coantainer{
   margin-top: 5px;
+}
+
+/* 登录相关 */
+.login-applogo-container{
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+}
+.login-app-v-info{
+  color:#666;
+  font-size: 12px;
+  margin-top: 6px;
+  margin-left: 6px;
 }
