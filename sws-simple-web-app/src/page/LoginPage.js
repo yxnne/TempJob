@@ -1,6 +1,7 @@
 import React from 'react';
 import { List, InputItem, WhiteSpace } from 'antd-mobile';
-
+import { successToast, failToast } from '../component/toasts/Toasts';
+import * as constants from '../constant';
 
 /** 登录页面 */
 class LoginPage extends React.Component {
@@ -21,9 +22,25 @@ class LoginPage extends React.Component {
     this.onClickBasicTitle = this.onClickBasicTitle.bind(this);
   }
 
-  onClickLogin(){
-    console.log(this.state)
+  componentDidMount(){
+    //console.log('localStorage.username', localStorage.username);
+    this._getInfoToStatefromLocalStorage()
   }
+
+  onClickLogin(){
+    // TODO:异步验证登录逻辑
+
+    // 存储信息
+    this._setInfoToLocalStorage();
+
+    // 弹窗
+    successToast('登录成功');
+    //failToast('登录失败');
+
+    // 跳转
+    this._jumpToAdminMain();
+  }
+
   
   onInputChanged(stateKey, value){
     this.setState({
@@ -42,10 +59,38 @@ class LoginPage extends React.Component {
     this.userInputRef.focus();
   }
 
+  // 设置本地存储 localStorage
+  _setInfoToLocalStorage(){
+    localStorage.username = this.state.username;
+    localStorage.password = this.state.password;
+    localStorage.serverIP = this.state.serverIP;
+    localStorage.serverPort = this.state.serverPort;
+  }
+
+  // 从localstorage中得到信息
+  _getInfoToStatefromLocalStorage(){
+    this.setState({
+      username: localStorage.username? localStorage.username:'',
+      password: localStorage.password? localStorage.password:'',
+      serverIP: localStorage.serverIP? localStorage.serverIP:'',
+      serverPort:localStorage.serverPort? localStorage.serverPort:'',
+    });
+  }
+
+  // 跳转管理员的系统主页
+  _jumpToAdminMain(){
+    this.props.history.push(constants.PATH_HOSPITAL_OVERALL);
+  }
+
+  _errorModal(text){
+
+  }
+
   render(){
     // 服务器IP信息输入框
     const serverSetServerEle = this.state.isNeedServerSet?(
-      <InputItem  clear placeholder="设置服务器IP地址" ref={r=>this.serverIPInputRef = r}
+      <InputItem  placeholder="设置服务器IP地址" value={this.state.serverIP}
+      ref={r=>this.serverIPInputRef = r}
       onChange={(v)=>this.onInputChanged("serverIP", v )}>
         服务器
       </InputItem>
@@ -53,7 +98,7 @@ class LoginPage extends React.Component {
 
     // 服务器端口信息输入框
     const serverSetPortEle = this.state.isNeedServerSet?(
-      <InputItem clear placeholder="设置服务器端口号" 
+      <InputItem placeholder="设置服务器端口号" value={this.state.serverPort}
       onChange={(v)=>this.onInputChanged("serverPort", v )}>
         端口
       </InputItem>
@@ -83,13 +128,13 @@ class LoginPage extends React.Component {
           </List.Item>
 
           {/* 基本信息输入框 */}
-          <InputItem clear placeholder="请输入用户名" 
+          <InputItem clear placeholder="请输入用户名" value={this.state.username}
             onChange={(v)=>this.onInputChanged("username", v )}
             ref={el => this.userInputRef = el}>
             用户名
           </InputItem>
-          <InputItem clear placeholder="请输入对应密码" 
-          onChange={(v)=>this.onInputChanged("password", v )}>
+          <InputItem clear placeholder="请输入对应密码" value={this.state.password}
+          onChange={(v)=>this.onInputChanged("password", v )} type='password'>
             密码
           </InputItem>
 
