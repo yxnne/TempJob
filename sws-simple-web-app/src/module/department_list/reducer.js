@@ -18,7 +18,7 @@ const initState = {
 export default (state=initState, action) =>{
   switch(action.type){
     case actionType.GET_DEPARTMENT_LIST_STATISTIC:
-      return {...state, ...action.payload };
+      return {list: action.payload };
     default:
       return { ...state }
 
