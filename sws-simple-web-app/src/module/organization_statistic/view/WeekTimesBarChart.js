@@ -4,7 +4,7 @@ import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
 // 定义度量
 const cols = {
   times: { alias: '洗手次数' }, // y
-  date: { alias: '日期' } // x
+  day: { alias: '日期' } // x
 };
 
 // 边距
@@ -15,10 +15,10 @@ const lineChartPadding = {
 /** 条形图组件: 一周的洗手时机 */
 export default ({height, data })=>(
   <Chart height={height} data={data} scale={cols} forceFit padding={lineChartPadding}>
-    <Axis name="date" />
+    <Axis name="day" />
     <Axis name="times" />
     <Tooltip />
-    <Geom type="interval" position="date*times" color="date" />
+    <Geom type="interval" position="day*times" color="day" />
   </Chart>
 );
 

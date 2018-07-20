@@ -28,7 +28,7 @@ ReactDOM.render(
             {/* here Routes */}
 
             <Route path={`${constant.PATH_LOGIN}`} component={LoginPage}/>
-            <Route path={`${constant.PATH_DEPARTMENT_OVERALL}/:rank`} component={AdminMainDepartmentPage}/>
+            <Route path={`${constant.PATH_DEPARTMENT_OVERALL}/:id`} component={AdminMainDepartmentPage}/>
             <Route path={`${constant.PATH_STAFF_DETAIL}/:rank`} component={StaffDetailPage}/>
 
             {/* to Tabs Navigation */}
