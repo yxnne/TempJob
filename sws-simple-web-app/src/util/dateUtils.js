@@ -1,4 +1,12 @@
 const ONEDAY_MILLS = 24 * 60 * 60 * 1000;
+
+export const getTestDaysString = () => {
+  return {
+    startTime:'2018-06-20 09:20:34',
+    endTime:'2018-06-27 09:20:34',
+  }
+}
+
 /** 
  * 得到从今天开始向前一周的日期字符串
  * 形式 2018-06-19 10:19:34

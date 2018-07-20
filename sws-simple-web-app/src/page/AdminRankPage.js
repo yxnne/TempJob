@@ -36,7 +36,6 @@ export default class AdminRankPage extends Component {
 
     };
   }
-
   render() {
     return (
       <div>
@@ -48,7 +47,7 @@ export default class AdminRankPage extends Component {
             
             {/* 第一个Tab内容 -- 部门排名 */}
             <div style={containerStyle}>
-            <CheckCondition checkCallback={f=>f}/>
+              <CheckCondition checkCallback={f=>f}/>
               <WingBlank>
                 <DepartmentRanks title="一周科室排名"/>
               </WingBlank>

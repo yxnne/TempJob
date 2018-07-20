@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
 import { WingBlank, WhiteSpace } from 'antd-mobile';
+import { connect } from 'react-redux'
 import { view as OrganizationStatistic } from '../module/organization_statistic';
 import { view as StaffRanks } from '../module/staffRate_list';
 import BackToTop from '../component/backToTop/BackToTop';
 import * as constants from '../constant';
+import { getOrganizationInfo } from '../module/organization_statistic';
 
 const BACK_PATH = constants.PATH_HOSPITAL_OVERALL;
 
 /** 部门主页 */
+@connect(
+  null,  
+  dispatch =>({
+    getOrganizationInfo:(departmentId)=>dispatch(getOrganizationInfo(departmentId))
+  })
+)
 export default class AdminMainDepartmentPage extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      rank:0,
-    };
-  }
+
 
   componentDidMount(){
     // set Rank
-    const rank = this.props.match.params.rank;
-    this.setState({ rank });
+    // const rank = this.props.match.params.rank;
+    // this.setState({ rank });
+    // console.log('onMount');
+    const id = this.props.match.params.id;
+    console.log('id => ', id);
+    this.props.getOrganizationInfo(id);
+    
   }
   render() {
     return (

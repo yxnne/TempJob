@@ -54,10 +54,13 @@ const makeStaffContent = (name, role, times) =>{
 @withRouter
 class RankList extends Component {
 
-  onItemClick(rank){
+  onItemClick(item){
+    let param ;
+    this.props.type === TYPE_DEPARTMENT?param = item.id: param = item.rank;
+
     const path = this.props.jumpPath;
     if(path){
-      this.props.history.push(`${path}/${rank}`);
+      this.props.history.push(`${path}/${param}`);
     }
   }
 
@@ -68,7 +71,7 @@ class RankList extends Component {
           {
             this.props.dataList.map(item => (
               <Item thumb={makeAvatar(item.rank, "#0000ff", "white")} key={item.rank}
-                arrow="horizontal" onClick={()=>this.onItemClick(item.rank)}>
+                arrow="horizontal" onClick={()=>this.onItemClick(item)}>
 
                 { 
                   this.props.type === TYPE_DEPARTMENT?
