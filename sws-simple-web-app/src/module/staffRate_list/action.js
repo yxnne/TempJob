@@ -1,5 +1,6 @@
 import * as actionType from './actionType';
 import axios from 'axios';
+import { getOneWeekStartAndEndTimeString, getTestDaysString } from '../../util/dateUtils';
 
 // url
 const URL_STAFFLIST_GET = '/iel-hhms/web/app/getStaffCounts.action';
@@ -13,16 +14,22 @@ export const getAction = ( result ) => ({
 });
 
 // 对外暴露方法来Get到数据
-export const getStaffList = ( startTime, endTime ) => {
+export const getStaffStatisticList = ( departmentIds ) => {
 
   return dispatch =>{
+
+    const startTime = getTestDaysString().startTime;
+    const endTime = getTestDaysString().endTime;
+
     axios.get(URL_STAFFLIST_GET, {
-      params:{ startTime, endTime }
+      params:{ startTime, endTime, departmentIds }
     }).then(res =>{
-      if(res.code === 200 ) {
-        console.log(res);
+      if(res.status === 200 ) {
+        console.log("staff -> ", res);
+        
+        dispatch(getAction(res.data.result));
+
       }
-      // dispatch(getAction());
 
     })
   }

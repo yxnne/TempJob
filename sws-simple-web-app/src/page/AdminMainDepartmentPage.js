@@ -5,7 +5,10 @@ import { view as OrganizationStatistic } from '../module/organization_statistic'
 import { view as StaffRanks } from '../module/staffRate_list';
 import BackToTop from '../component/backToTop/BackToTop';
 import * as constants from '../constant';
+
 import { getOrganizationInfo } from '../module/organization_statistic';
+import { getStaffStatisticList } from '../module/staffRate_list';
+
 
 const BACK_PATH = constants.PATH_HOSPITAL_OVERALL;
 
@@ -13,7 +16,8 @@ const BACK_PATH = constants.PATH_HOSPITAL_OVERALL;
 @connect(
   null,  
   dispatch =>({
-    getOrganizationInfo:(departmentId)=>dispatch(getOrganizationInfo(departmentId))
+    getOrganizationInfo:(departmentId)=>dispatch(getOrganizationInfo(departmentId)),
+    getStaffStatisticList:(departmentId)=>dispatch(getStaffStatisticList(departmentId))
   })
 )
 export default class AdminMainDepartmentPage extends Component {
@@ -25,8 +29,9 @@ export default class AdminMainDepartmentPage extends Component {
     // this.setState({ rank });
     // console.log('onMount');
     const id = this.props.match.params.id;
-    console.log('id => ', id);
+    // console.log('id => ', id);
     this.props.getOrganizationInfo(id);
+    this.props.getStaffStatisticList(id);
     
   }
   render() {

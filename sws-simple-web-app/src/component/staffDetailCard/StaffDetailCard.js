@@ -47,6 +47,11 @@ export default class StaffDetailCard extends Component {
   }
 
   render() {
+
+    const one = this.props.staffInfo? this.props.staffInfo : {
+      name:'姓名', rank:'?',department:'部门', detail:[],role:'职责',times:'次数'
+    };
+
     // 更多细节的按钮
     const moreEle = (
       <div style={{ marginTop:50 ,padding:10, color:'#33A3F4'}} onClick={this.toggleDetailShow}>
@@ -65,16 +70,16 @@ export default class StaffDetailCard extends Component {
 
             {/* 名次的容器 */}
             <div style={rankInfoContainer}>
-              第<span style={rankTextStyle}>2</span>名
+              第<span style={rankTextStyle}>{one.rank}</span>名
             </div>
 
             <div style={infoContainer}>
-              <TextAvatar bgColor='#33a4f4' text='张'/>
-              <div style={infoItemStyle}>神经内科</div>
-              <div style={infoItemStyle}>张飞 &nbsp; , &nbsp; 医生</div>
+              <TextAvatar bgColor='#33a4f4' text={one.name[0]}/>
+              <div style={infoItemStyle}>{one.department}</div>
+              <div style={infoItemStyle}>{one.name}&nbsp; , &nbsp; {one.role}</div>
 
               <div style={{...infoItemStyle, marginTop:60}}>
-                共计洗手<span style={mainTimesTextStyle}>144</span>次
+                共计洗手<span style={mainTimesTextStyle}>{one.times}</span>次
               </div>
 
               {/* 更多按钮 */}
@@ -86,18 +91,14 @@ export default class StaffDetailCard extends Component {
                 (
                   <WingBlank>
                     <List >
-                      <List.Item>
-                        { makeDetailContent('A处液瓶', 40)}
-                      </List.Item>
-                      <List.Item>
-                        { makeDetailContent('B处液瓶', 60)}
-                      </List.Item>
-                      <List.Item>
-                        { makeDetailContent('C处液瓶', 140)}
-                      </List.Item>
-                      <List.Item>
-                        { makeDetailContent('D处液瓶', 20)}
-                      </List.Item>
+                      {
+                        one.detail.map(item=>(
+                          <List.Item>
+                            { makeDetailContent(item.position, item.times)}
+                          </List.Item>
+                        ))
+                      }
+
                     </List>
                   </WingBlank>
                 ):(null)

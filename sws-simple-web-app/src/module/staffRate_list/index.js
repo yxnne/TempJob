@@ -2,4 +2,6 @@ import reducer from './reducer';
 import  * as action  from './action';
 import view from './view/Container';
 
-export {reducer, view, action };
+const getStaffStatisticList = action.getStaffStatisticList;
+
+export {reducer, view, getStaffStatisticList };
