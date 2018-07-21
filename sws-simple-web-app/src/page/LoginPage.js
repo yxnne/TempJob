@@ -1,15 +1,55 @@
 import React from 'react';
 import { List, InputItem, WhiteSpace } from 'antd-mobile';
-import { successToast, failToast } from '../component/toasts/Toasts';
+import { withRouter } from 'react-router-dom'
+import { successToast, failToast, textOnlyToast } from '../component/toasts/Toasts';
 import * as constants from '../constant';
+import { connect } from 'react-redux';
+import { action } from "../module/login";
+
+// const login = action.login;
+@withRouter
+class JumpFunc extends React.Component {
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.readyToJump){
+      this._setInfoToLocalStorage()
+      this._jumpToAdminMain();
+      successToast('登录成功');
+    }
+  }
+
+  // 跳转管理员的系统主页
+  _jumpToAdminMain(){
+    this.props.history.push(constants.PATH_HOSPITAL_OVERALL);
+  }
+  // 设置本地存储 localStorage
+  _setInfoToLocalStorage(){
+    localStorage.username = this.props.username;
+    localStorage.password = this.props.password;
+    localStorage.serverIP = this.props.serverIP;
+    localStorage.serverPort = this.props.serverPort;
+  }
+  render(){
+    return null;
+  }
+}
 
 /** 登录页面 */
+@connect(
+  state => ({
+    success:state.loginInfo.success
+  }),
+  dispatch => ({
+    login:(username,password) => dispatch(action.login(username,password))
+  })
+)
 class LoginPage extends React.Component {
 
   constructor(props){
     super(props);
     this.state = {
-      isNeedServerSet:false,
+      needSetting:false, // 是否需要设置server和port
+      isNeedServerSet:false, // 设置server的面板是否展开
       username:'',
       password:'',
       serverIP:'',
@@ -23,22 +63,25 @@ class LoginPage extends React.Component {
   }
 
   componentDidMount(){
-    //console.log('localStorage.username', localStorage.username);
-    this._getInfoToStatefromLocalStorage()
+    this._getInfoToStatefromLocalStorage();
   }
 
   onClickLogin(){
-    // TODO:异步验证登录逻辑
-
+    const username = this.state.username;
+    const password = this.state.password;
+    if ( username === '' || password === '' ){
+      failToast('请输入用户名和密码');
+      return ;
+    }
+    this.props.login( username, password );
+    // 登录后的逻辑在JumpFunc组件
     // 存储信息
-    this._setInfoToLocalStorage();
-
-    // 弹窗
-    successToast('登录成功');
-    //failToast('登录失败');
-
-    // 跳转
-    this._jumpToAdminMain();
+    // this._setInfoToLocalStorage();
+    // // 弹窗
+    // successToast('登录成功');
+    // //failToast('登录失败');
+    // // 跳转
+    // this._jumpToAdminMain();
   }
 
   
@@ -49,9 +92,12 @@ class LoginPage extends React.Component {
   }
 
   onClickToggleServerSet(){
+    if(!this.state.needSetting){
+      textOnlyToast('暂时不支持该功能');
+      return;
+    }
     const isNeedServer = this.state.isNeedServerSet;
     this.setState({ isNeedServerSet:!isNeedServer});
-
   }
 
   onClickBasicTitle(){
@@ -109,6 +155,14 @@ class LoginPage extends React.Component {
 
     return (
       <div>
+        <JumpFunc readyToJump={this.props.success} 
+          username={this.state.username}
+          password={this.state.password}
+          serverIP={this.state.serverIP}
+          serverPort={this.state.serverPort}
+          />
+
+
         <div className='login-app-v-info'>智控手卫生简化版 Web APP v1.0</div>
 
         {/* logo部分 */}

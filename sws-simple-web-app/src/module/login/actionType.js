@@ -1,0 +1,6 @@
+// 登录action
+export const OK_LOGIN_ACTION = 'OK_LOGIN_ACTION/LOGIN';
+// 网络错误
+export const ERROR_NETWORK_ACTION = 'ERROR_NETWORK_ACTION/LOGIN';
+// 登录失败
+export const ERROR_FAILED_ACTION = 'ERROR_FAILED_ACTION/LOGIN';

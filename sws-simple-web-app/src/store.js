@@ -4,12 +4,14 @@ import thunk from 'redux-thunk';
 import { reducer as organizationStatistic } from './module/organization_statistic';
 import { reducer as departmentListStatistic } from './module/department_list';
 import { reducer as staffListStatistic } from './module/staffRate_list';
+import { reducer as loginInfo } from './module/login';
 
 // combine the reducers
 const reducers =  combineReducers({ 
   organizationStatistic,
   departmentListStatistic,
-  staffListStatistic 
+  staffListStatistic,
+  loginInfo 
 });
 
 // middlewares
