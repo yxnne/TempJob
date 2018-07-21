@@ -17,7 +17,6 @@ export const getAction = (result) => ({
 export const getOrganizationInfosAction = (departmentId)=>{
 
   return (dispatch)=>{
-    console.log('1234');
     const startTime = getTestDaysString().startTime;
     const endTime = getTestDaysString().endTime;
     axios.get(URL_ORGANIZATION_GET, {

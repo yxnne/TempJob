@@ -31,6 +31,19 @@ class CheckCondition extends Component {
     this.onCheckClick = this.onCheckClick.bind(this);
   }
 
+  componentDidMount(){
+
+    if(this.props.departmentTypes){
+      const newTypeData = this.props.departmentTypes.map(item=>({
+        name:item.name, value:item.id, checked:false 
+      }));
+
+      this.setState({
+        departData:[ {name:'全院', value:0, checked:true}, ...newTypeData ]
+      });
+    }
+  }
+
   toggleConditionHide(){
     const hide = this.state.conditionHide;
     this.setState({
@@ -57,11 +70,29 @@ class CheckCondition extends Component {
     console.log("this.state.start", this.state.start )
     console.log("this.state.end", this.state.end )
     console.log("this.state.departData", this.state.departData )
-
-    if(this.props.checkCallback ){
-      // 这里具体的形式待定
-      this.props.checkCallback(this.state.start, this.state.end, this.state.departData )
+    let seletedDepartments = [];
+    if(this.state.departData[0].checked){
+      //如果全院被选中
+      seletedDepartments = this.state.departData
+      .map(item=>(item.value))
+      .filter(item =>(item !== 0));
+      
+    } else {
+      seletedDepartments = this.state.departData.filter(item=>(
+        item.checked === true
+      )).map(item=>(
+        item.value
+      ));
     }
+
+    if(this.props.isDepartmentrequired){
+      this.props.checkCallback(seletedDepartments, this.state.start, this.state.end )
+    }else{
+      this.props.checkCallback(this.state.start, this.state.end )
+    }
+
+    // console.log('被作为参数--->', seletedDepartments)
+
   }
 
   render() {

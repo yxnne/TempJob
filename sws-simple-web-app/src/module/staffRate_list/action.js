@@ -6,24 +6,27 @@ import { getOneWeekStartAndEndTimeString, getTestDaysString } from '../../util/d
 const URL_STAFFLIST_GET = '/iel-hhms/web/app/getStaffCounts.action';
 
 export const testAction = ()=>({
-  type: actionType.TEST_DEPARTMENT_LIST_STATISTIC
+  type: actionType.TEST_STAFF_LIST_STATISTIC
 });
 
 export const getAction = ( result ) => ({
-  type: actionType.GET_DEPARTMENT_LIST_STATISTIC, payload:result
+  type: actionType.GET_STAFF_LIST_STATISTIC, payload:result
 });
 
 // 对外暴露方法来Get到数据
-export const getStaffStatisticList = ( departmentIds ) => {
-
+export const getStaffStatisticList = ( departmentIds, startTime, endTime ) => {
+  console.log('departmentIds', departmentIds)
   return dispatch =>{
 
-    const startTime = getTestDaysString().startTime;
-    const endTime = getTestDaysString().endTime;
+    // 这里departmentIds是一个数组
+    // 自己手动拼接URL
+    let paramUrl_departs = "";
+    for( const one of departmentIds ){
+      paramUrl_departs += `departmentIds=${one}&`;
+    }
+    const url = URL_STAFFLIST_GET + '?' + paramUrl_departs + `startTime=${startTime}&endTime=${endTime}`;
 
-    axios.get(URL_STAFFLIST_GET, {
-      params:{ startTime, endTime, departmentIds }
-    }).then(res =>{
+    axios.get(url).then(res =>{
       if(res.status === 200 ) {
         console.log("staff -> ", res);
         

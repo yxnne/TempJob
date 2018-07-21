@@ -8,7 +8,7 @@ import * as constants from '../constant';
 
 import { getOrganizationInfo } from '../module/organization_statistic';
 import { getStaffStatisticList } from '../module/staffRate_list';
-
+import { getOneWeekStartAndEndTimeString, getTestDaysString } from '../util/dateUtils';
 
 const BACK_PATH = constants.PATH_HOSPITAL_OVERALL;
 
@@ -17,7 +17,7 @@ const BACK_PATH = constants.PATH_HOSPITAL_OVERALL;
   null,  
   dispatch =>({
     getOrganizationInfo:(departmentId)=>dispatch(getOrganizationInfo(departmentId)),
-    getStaffStatisticList:(departmentId)=>dispatch(getStaffStatisticList(departmentId))
+    getStaffStatisticList:(departmentId,startTime, endTime)=>dispatch(getStaffStatisticList(departmentId,startTime, endTime))
   })
 )
 export default class AdminMainDepartmentPage extends Component {
@@ -28,10 +28,13 @@ export default class AdminMainDepartmentPage extends Component {
     // const rank = this.props.match.params.rank;
     // this.setState({ rank });
     // console.log('onMount');
+    const startTime = getTestDaysString().startTime;
+    const endTime = getTestDaysString().endTime;
+
     const id = this.props.match.params.id;
-    // console.log('id => ', id);
+    //console.log('id => ', id);
     this.props.getOrganizationInfo(id);
-    this.props.getStaffStatisticList(id);
+    this.props.getStaffStatisticList([id], startTime, endTime);
     
   }
   render() {
