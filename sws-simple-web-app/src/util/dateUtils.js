@@ -15,8 +15,8 @@ export const getOneWeekStartAndEndTimeString = () =>{
   let nowDate = new Date();
   let weekBeforeDate = new Date(nowDate.getTime() - ONEDAY_MILLS * 7);
   return {
-    startTime:_formatDateTime(nowDate),
-    endTime:_formatDateTime(weekBeforeDate),
+    startTime:_formatDateTime(weekBeforeDate),
+    endTime:_formatDateTime(nowDate),
   }
 };
 
@@ -28,8 +28,8 @@ export const getStartAndEndTimeString = (beforeDays) =>{
   let nowDate = new Date();
   let weekBeforeDate = new Date(nowDate.getTime() - ONEDAY_MILLS * beforeDays);
   return {
-    startTime:_formatDateTime(nowDate),
-    endTime:_formatDateTime(weekBeforeDate),
+    startTime:_formatDateTime(weekBeforeDate),
+    endTime:_formatDateTime(nowDate),
   }
 };
 

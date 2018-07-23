@@ -28,8 +28,8 @@ export default class AdminMainDepartmentPage extends Component {
     // const rank = this.props.match.params.rank;
     // this.setState({ rank });
     // console.log('onMount');
-    const startTime = getTestDaysString().startTime;
-    const endTime = getTestDaysString().endTime;
+    const startTime = getOneWeekStartAndEndTimeString().startTime;
+    const endTime = getOneWeekStartAndEndTimeString().endTime;
 
     const id = this.props.match.params.id;
     //console.log('id => ', id);

@@ -57,8 +57,8 @@ export default class AdminRankPage extends Component {
 
   componentDidMount(){
     // console.log('abcd');
-    const startTime = getTestDaysString().startTime;
-    const endTime = getTestDaysString().endTime;
+    const startTime = getOneWeekStartAndEndTimeString().startTime;
+    const endTime = getOneWeekStartAndEndTimeString().endTime;
     // 默认取一周数据
     this.props.getDepartList(startTime, endTime);
     //this.props.getStaffList( HOSPITAL_ID, startTime, endTime);

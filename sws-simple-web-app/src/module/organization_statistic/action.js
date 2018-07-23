@@ -17,8 +17,8 @@ export const getAction = (result) => ({
 export const getOrganizationInfosAction = (departmentId)=>{
 
   return (dispatch)=>{
-    const startTime = getTestDaysString().startTime;
-    const endTime = getTestDaysString().endTime;
+    const startTime = getOneWeekStartAndEndTimeString().startTime;
+    const endTime = getOneWeekStartAndEndTimeString().endTime;
     axios.get(URL_ORGANIZATION_GET, {
       params:{
         startTime: startTime, 

@@ -24,8 +24,8 @@ export default class AdminMainHospitalPage extends Component {
 
   componentDidMount(){
     // 查询一周的信息
-    const startTime = getTestDaysString().startTime;
-    const endTime = getTestDaysString().endTime;
+    const startTime = getOneWeekStartAndEndTimeString().startTime;
+    const endTime = getOneWeekStartAndEndTimeString().endTime;
     this.props.getDepartmentTypes();
     this.props.getOrganizationInfo(HOSPITAL_ID);
     this.props.getDepartList(startTime, endTime);
