@@ -11,15 +11,20 @@ const infoContainer = { textAlign:'center', fontSize:18};
 const infoItemStyle = { margin:'10px auto', fontSize:18, paddingTop:4 };
 const mainTimesTextStyle = { fontSize:32, margin:'0px 8px'};
 
-const makeDetailContent = (position, times) =>{
+const makeDetailContent = (position, name ,times) =>{
   return (
     <div style={{display:'table', width:'100%'}}>
       <div style={{display:'table-row',  width:'100%'}}>
-        <div style={{marginLeft:12, display:'table-cell',  width:'60%', textAlign:'center'}}>
-        {position}
+        <div style={{marginLeft:12, display:'table-cell',  width:'60%', textAlign:'center', fontSize:14}}>
+        <div style={{textAlign:'left'}}>{position}</div>
+        <div style={{textAlign:'left'}}>{name}</div>
         </div>
-        <div style={{marginLeft:12, display:'table-cell',  width:'40%', textAlign:'center'}}>
-        {times}<span style={{fontSize:12, marginLeft:8}}>次</span>
+        
+        <div style={{marginLeft:12, display:'table-cell',  width:'40%', textAlign:'center',position:'relative'}}>
+          <div style={{position: 'absolute', bottom: 0, right: 12}}>
+            &nbsp;&nbsp;&nbsp;<span style={{color:'#33a4f4', fontSize:20}}>{times}</span>
+            <span style={{fontSize:16, marginLeft:8}}>次</span>
+          </div>
         </div>
       </div>
     </div>
@@ -94,7 +99,7 @@ export default class StaffDetailCard extends Component {
                       {
                         one.detail.map(item=>(
                           <List.Item>
-                            { makeDetailContent(item.position, item.times)}
+                            { makeDetailContent(item.position, item.name, item.times)}
                           </List.Item>
                         ))
                       }
