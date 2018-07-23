@@ -17,8 +17,17 @@ export default ({height, data })=>(
   <Chart height={height} data={data} scale={cols} forceFit padding={lineChartPadding}>
     <Axis name="day" />
     <Axis name="times" />
-    <Tooltip />
-    <Geom type="interval" position="day*times" color="day" />
+    {/* <Tooltip /> */}
+    <Geom type="interval" position="day*times" color="day" 
+      tooltip={['day*times', (day, times) => {
+        return {
+          //自定义 tooltip 上显示的 title 显示内容等。
+          name: '次数',
+          title: day,
+          value: `${times} 次`
+        };
+      }]}
+    />
   </Chart>
 );
 
