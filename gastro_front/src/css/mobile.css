@@ -1,0 +1,78 @@
+html{
+  font-size: 50px;
+}
+
+/* start mobile Header Footer的样式 */
+
+#logo {
+ width: 150px;
+ height: 31px;
+ background: rgba(255,255,255,.2);
+ margin: 16px 28px 16px 0;
+ float: left;
+}
+
+#mobile_footer{
+  text-align: center;
+}
+
+/* end mobile Header Footer的样式 */
+
+/* start mobile menu触发按钮的样式 */
+#trigger {
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  color: #fff;
+  transition: color .3s;
+  float: right;
+  margin-right: 0px;
+}
+
+#trigger:hover {
+  color: #46cd71;;
+}
+
+/* end mobile menu触发按钮的样式 */
+#logo_in_slide_container{
+  margin-top: 30px;
+  text-align: center;
+  line-height: 64px;
+  height: 64px;
+  vertical-align: middle;
+}
+
+#pages_container_without_breadcrumb{
+  background: #fff;
+  padding: 24;
+  min-height: 500px;
+}
+#basic_table_and_form_container{
+  padding: 0 16px;
+}
+
+#btn_container{
+  margin-bottom: 8px;
+
+
+}
+#btn_container Button{
+
+  margin-top: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+
+#m_table_tools_container{
+  margin: 0 10px;
+  margin-top: 18px;
+}
+
+#modal_btn_container{
+  margin: 32px;
+
+}
+#m_table_card_title_container{
+  font-size: 14px;
+}

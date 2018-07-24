@@ -1,0 +1,91 @@
+/*header */
+
+ .logo {
+  width: 220px;
+  height: 31px;
+  background: rgba(255,255,255,.2);
+  margin: 16px 28px 16px 0;
+  float: left;
+}
+
+.avatar_container{
+  float: right;
+  margin: 10px 28px 16px 0;
+  height: 31px;
+}
+/*end header */
+
+/*footer*/
+
+.footer{
+  text-align: center;
+}
+
+/*end footer*/
+
+/*start 页面主体设置*/
+.pages_container{
+  min-height: 750px;
+}
+/*
+.main_container_every_pc_page{
+  background: #f0f2f5;
+}
+*/
+.pages_container_without_breadcrumb{
+  background: #fff;
+  padding: 24;
+  min-height: 500px;
+}
+/*end 页面主体设置*/
+
+.basic_table_and_form_container{
+  padding: 0 16px;
+  /*不限定最小高度可能更好*/
+  /*min-height: 560px;*/
+
+}
+.three_btn_container{
+  margin-bottom: 16px;
+  margin-top: 16px;
+  float: right;
+}
+.three_btn_container Button{
+  margin:0 4px;
+}
+.one_small_btn_container{
+  margin-bottom: 4px;
+
+}
+.one_small_btn_container Button{
+  margin:0 8px;
+}
+.search_form_container{
+  padding-top: 24px;
+  padding-left: 30px;
+  padding-right: 24px;
+  background: #fff;
+}
+.select_gastro_tabpane_container{
+  padding: 0 8px;
+}
+
+/*左侧内镜卡片的弹出样式*/
+.custom-filter-dropdown {
+  padding: 8px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+}
+
+.custom-filter-dropdown input {
+  width: 130px;
+  margin-right: 8px;
+}
+
+.highlight {
+  color: #f50;
+}
+.gastro_use_info_card_container{
+  margin: 0 16px;
+}

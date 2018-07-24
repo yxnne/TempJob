@@ -1,0 +1,48 @@
+{
+  "name": "endo_front",
+  "version": "1.0.0",
+  "description": "This is the front-end part of an IEL's project:Endoscope Manangement System Code.",
+  "main": "root.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --content-base src --hot --host 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://yxnnemac1@106.14.12.191:29418/IEL_IntroScope_FrontEnd.git"
+  },
+  "author": "yxnne",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^3.0.2",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-react-html-attrs": "^2.1.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "fetch": "^1.1.0",
+    "rc-queue-anim": "^1.4.1",
+    "rc-scroll-anim": "^2.2.1",
+    "rc-tween-one": "^1.7.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-responsive": "^4.0.3",
+    "react-router-dom": "^4.2.2",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-import": "^1.6.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "less-vars-to-js": "^1.2.1",
+    "style-loader": "^0.19.1"
+  }
+}
