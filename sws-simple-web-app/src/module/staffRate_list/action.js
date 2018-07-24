@@ -1,6 +1,5 @@
 import * as actionType from './actionType';
 import axios from 'axios';
-import { getOneWeekStartAndEndTimeString, getTestDaysString } from '../../util/dateUtils';
 
 // url
 const URL_STAFFLIST_GET = '/iel-hhms/web/app/getStaffCounts.action';

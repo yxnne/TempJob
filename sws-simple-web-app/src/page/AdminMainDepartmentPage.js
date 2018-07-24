@@ -45,8 +45,8 @@ export default class AdminMainDepartmentPage extends Component {
 
         
         <WingBlank>
-          <OrganizationStatistic overallTitle="一周执行情况" tendencyTitle="一周变化趋势"/>
-          <StaffRanks title="一周员工排名"/>
+          <OrganizationStatistic overallTitle="近七日执行情况" tendencyTitle="近七日变化趋势"/>
+          <StaffRanks title="近七日员工排名"/>
         </WingBlank>
         
         <WhiteSpace size='xl'/>

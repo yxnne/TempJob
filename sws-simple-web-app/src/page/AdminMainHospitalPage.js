@@ -36,8 +36,8 @@ export default class AdminMainHospitalPage extends Component {
     return (
       <div>
         <WingBlank>
-          <OrganizationStatistic overallTitle="一周执行情况" tendencyTitle="一周变化趋势"/>
-          <DepartmentListStatisttic title="一周科室排名"/>
+          <OrganizationStatistic overallTitle="近七日执行情况" tendencyTitle="近七日变化趋势"/>
+          <DepartmentListStatisttic title="近七日科室排名"/>
         </WingBlank>
         
         <WhiteSpace size='xl'/>

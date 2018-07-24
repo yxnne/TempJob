@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 //import { createForm } from 'rc-form';
-import { Card, WhiteSpace,  DatePicker, List, Checkbox } from 'antd-mobile';
+import { Card, WhiteSpace,  DatePicker, List, Checkbox, Button } from 'antd-mobile';
 import PropTypes from 'prop-types';
 import { CheckButton } from '../buttons/Buttons';
+import { getStringFormDate } from '../../util/dateUtils';
 
 const CheckboxItem =  Checkbox.CheckboxItem;
 const departData = [
@@ -19,10 +20,13 @@ class CheckCondition extends Component {
   constructor(props){
     super(props);
 
+    const nowDate = new Date();
+    const before7DaysDate = new Date(nowDate.getTime() - 24 * 60 * 60 * 1000 * 7);
+
     this.state = {
       conditionHide: true,//是否隐藏
-      start:"", // 开始时间
-      end:"",   // 结束时间
+      start:before7DaysDate, // 开始时间
+      end:nowDate,   // 结束时间
       departData:departData   // 部门列表
     };
 
@@ -67,9 +71,10 @@ class CheckCondition extends Component {
   }
 
   onCheckClick(){
-    console.log("this.state.start", this.state.start )
-    console.log("this.state.end", this.state.end )
-    console.log("this.state.departData", this.state.departData )
+
+    const startDateStr =  getStringFormDate(this.state.start);
+    const endDateStr =  getStringFormDate(this.state.end);
+
     let seletedDepartments = [];
     if(this.state.departData[0].checked){
       //如果全院被选中
@@ -86,9 +91,9 @@ class CheckCondition extends Component {
     }
 
     if(this.props.isDepartmentrequired){
-      this.props.checkCallback(seletedDepartments, this.state.start, this.state.end )
+      this.props.checkCallback(seletedDepartments, startDateStr, endDateStr );
     }else{
-      this.props.checkCallback(this.state.start, this.state.end )
+      this.props.checkCallback(startDateStr, endDateStr );
     }
 
     // console.log('被作为参数--->', seletedDepartments)
@@ -104,7 +109,9 @@ class CheckCondition extends Component {
       textAlign:'center', 
       marginTop:30,
       marginBottom:10,
-      color:'#33A3F4'
+      color:'#33A3F4',
+      paddingLeft:100,
+      paddingRight:100,
     };
     const hideBtn = (
       <div style={{margin:12, marginRight:12}} onClick={this.toggleConditionHide}>隐藏条件选择</div>
@@ -113,9 +120,9 @@ class CheckCondition extends Component {
     return (
 
       <div>
-        <div style={triggerStyle} onClick={this.toggleConditionHide}>
+        <div style={triggerStyle} >
 
-          查询条件选择
+          <Button type='ghost' size='small' onClick={this.toggleConditionHide}> 查询条件选择 </Button>
 
         </div>
 
