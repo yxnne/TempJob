@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (4.5.0)
+  - DGElasticPullToRefresh (1.1)
+  - LinearProgressView (0.1.1)
+  - PopupDialog (0.5.4)
+  - SwiftyJSON (3.1.4)
+  - Toaster (2.0.4)
+  - XLPagerTabStrip (7.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - DGElasticPullToRefresh
+  - LinearProgressView
+  - PopupDialog (~> 0.5)
+  - SwiftyJSON
+  - Toaster
+  - XLPagerTabStrip (~> 7.0)
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
+  LinearProgressView: 65c2f42e45375b516d938ba9ab856588eeb9b6e1
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Toaster: f13031c636ef065281bc11857be9a16c7659e04f
+  XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
+
+PODFILE CHECKSUM: 275af2f41e316afa80efbf1e5ed5b783a2332f28
+
+COCOAPODS: 1.2.1

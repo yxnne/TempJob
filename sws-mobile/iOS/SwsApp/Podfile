@@ -1,0 +1,14 @@
+platform :ios, '8.0'
+
+target 'SwsApp'do
+pod 'XLPagerTabStrip', '~> 7.0'
+pod 'DGElasticPullToRefresh'
+pod 'LinearProgressView'
+pod 'Toaster'
+pod 'Alamofire', '~> 4.4'
+pod 'SwiftyJSON'
+pod 'PopupDialog', '~> 0.5'
+
+end
+use_frameworks!
+
