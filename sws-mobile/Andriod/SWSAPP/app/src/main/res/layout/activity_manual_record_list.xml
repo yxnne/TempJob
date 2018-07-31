@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.iel.swsapp.activity.ManualRecordListActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary">
+        <RelativeLayout
+            android:id="@+id/rl_myactionbar_back"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_actionbar_back_click">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/icon_back_to_up"
+                />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_myactionbar_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_compliance_rate"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"/>
+        <ImageView
+            android:id="@+id/iv_myactionbar_menu"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:visibility="invisible"
+            android:src="@drawable/icon_more_menu"/>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_manual_record_list"
+        android:layout_width="match_parent"
+        android:background="@color/blockBetweenColor"
+        android:divider="@null"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+</LinearLayout>

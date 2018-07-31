@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主色调-->
+    <color name="colorPrimary">#00C0B9</color>
+    <color name="colorPrimary_harf_transparent">#9900C0B9</color>
+    <color name="colorPrimary_harfmore_transparent">#3300C0B9</color>
+    <color name="colorPrimary_harfmoremore_transparent">#2200C0B9</color>
+    <color name="colorPrimaryDark">#24908C</color>
+
+    <color name="colorPrimarylike1">#24908C</color>
+    <color name="colorPrimarylike2">#007D78</color>
+
+    <!--类似主色-->
+    <color name="colorPrimary_simliar_1">#35C0bb</color>
+    <color name="colorPrimary_simliar_2">#26BCB7</color>
+
+
+    <color name="colorAccent">#FF4081</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="harlf_transparent_dark">#22000000</color>
+    <color name="harf_transparent_grey">#aab6ada6</color>
+    <color name="harf_transparent_grey_lighter">#33b6ada6</color>
+    <color name="myWhite">#ffffff</color>
+    <color name="myDivider">#999999</color>
+    <color name="myDivider_hori">#0CAFA9</color>
+    <color name="myDivider_ver">#24B9B4</color>
+    <color name="myDivider_2">#aaaaaa</color>
+
+    <!--文字颜色-->
+    <color name="textNormalColor">#333333</color>
+    <color name="textNormalColor_lighter">#666666</color>
+    <!--块间距颜色-->
+    <color name="blockBetweenColor">#F2F2F2</color>
+    <!--最底层背景色-->
+    <color name="backgroudColor_lightGrey">#F2F2F2</color>
+
+    <!--图表颜色:主页 部门-->
+    <color name="chartBackgroud1">#7CE8E1</color>
+    <color name="chartFront1">#C8FBF8</color>
+    <!--图表颜色：四个角色-->
+    <color name="colorRoleNurse">#45D1CC</color>
+    <color name="colorRoleSuportWorker">#5E6975</color>
+    <color name="colorRoleDoctor">#E8A3A7</color>
+    <color name="colorRolePhysician">#5EA8C5</color>
+    <!--图表颜色：两前三后-->
+    <color name="color_Do_BeforeContact">#FFC55D</color>
+    <color name="color_Do_BeforeContact_bg">#FFE2AE</color>
+
+    <color name="color_Do_BeforeAspeticOpt">#32D6C5</color>
+    <color name="color_Do_BeforeAspeticOpt_bg">#98EAE2</color>
+
+    <color name="color_Do_AfterContactEnv">#AEA8FE</color>
+    <color name="color_Do_AfterContactEnv_bg">#D6D3FE</color>
+
+    <color name="color_Do_AfterContactFluids">#FF7E80</color>
+    <color name="color_Do_AfterContactFluids_bg">#FFBEBF</color>
+
+    <color name="color_Do_AfterContactPatient">#68ACF0</color>
+    <color name="color_Do_AfterContactPatient_bg">#B3D5F7</color>
+
+    <color name="color_Radar_bg">#98EAE2</color>
+
+    <!--图表颜色 环形piechart :5个-->
+    <color name="color_wash_times">#223142</color>
+    <!--<color name="color_wash_times">#006ce7</color>-->
+    <color name="color_leave_long_no_wash">#FE7276</color>
+    <color name="color_close_bed_no_wash">#979899</color>
+    <color name="color_leave_room_no_wash">#FAA755</color>
+    <color name="color_acess_no_wash">#52DDB6</color>
+
+    <!--列表-->
+    <color name="color_bk_table_head">#D6D4D4</color>
+    <color name="color_bk_table_odd">#F2F2F2</color>
+    <color name="color_bk_table_even">#E2E0E0</color>
+
+
+
+
+
+</resources>

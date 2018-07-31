@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_item_event"
+              android:layout_width="match_parent"
+              android:layout_height="88dp"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+                  android:layout_height="100dp"
+                  android:background="@color/blockBetweenColor"
+        android:gravity="bottom"
+                  android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="88dp"
+            android:layout_weight="1"
+            android:background="@color/myWhite"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_appnews_logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/icon_profile_depart"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="88dp"
+            android:paddingEnd="16dp"
+            android:layout_weight="2"
+            android:background="@color/myWhite"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_item_news_info_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="@string/app_name"
+                android:textColor="@color/textNormalColor"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_item_news_info_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/app_name"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/tv_item_news_info_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="@string/app_name"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

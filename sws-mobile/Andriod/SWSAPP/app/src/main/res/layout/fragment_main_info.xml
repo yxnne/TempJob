@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--banner 滚动栏-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_banner_main"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:elevation="5dp">
+
+                <!--滚动主体-->
+                <com.jude.rollviewpager.RollPagerView
+                    android:id="@+id/rpv_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:rollviewpager_play_delay="3000"
+                    app:rollviewpager_hint_gravity="center"
+                    app:rollviewpager_hint_paddingTop="8dp"
+                    app:rollviewpager_hint_paddingBottom="8dp"
+                    />
+            </android.support.v7.widget.CardView>
+
+            <!--card1 总体洗手率统计-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="162dp"
+                android:layout_marginTop="12dp"
+                android:elevation="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_depart_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/selector_card_bk">
+                    <!--卡片的标题-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/ll_tittle">
+                        <ImageView
+                            android:src="@drawable/icon_wash_hand"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"/>
+                        <TextView
+                            android:id="@+id/tv_main_frag_tittle_and_source"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="@string/text_tittle_departl_compliance_rate"
+                            android:textSize="12sp"
+                            android:textColor="@color/textNormalColor"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="16dp"
+                            android:gravity="end"
+                            android:layout_marginStart="15dp"
+                            android:text="@string/text_to_more"
+                            android:textSize="12sp"
+                            android:textColor="@color/textNormalColor"/>
+                    </LinearLayout>
+                    <!--饼图-->
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/piechart_depart_main"
+                        android:layout_below="@+id/ll_tittle"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+            <!--card 1 end-->
+
+            <!--card2 洗手时依从率-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="12dp"
+                android:elevation="5dp">
+                <RelativeLayout
+                    android:id="@+id/rl_time_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/selector_card_bk">
+                    <!--卡片的标题-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/ll_tittle_time">
+                        <ImageView
+                            android:src="@drawable/icon_wash_hand"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="@string/text_tittle_departl_time_compliance_rate"
+                            android:textSize="12sp"
+                            android:textColor="@color/textNormalColor"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="16dp"
+                            android:gravity="end"
+                            android:layout_marginStart="15dp"
+                            android:text="@string/text_to_more"
+                            android:textSize="12sp"
+                            android:textColor="@color/textNormalColor"/>
+                    </LinearLayout>
+
+                    <!--5个时机 饼图-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="10dp"
+                        >
+
+                        <!--小环图1-->
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp">
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/piechart_time_before_contact_main"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_centerInParent="true"
+
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="9sp"
+                                android:gravity="center"
+                                android:textColor="@color/textNormalColor"
+                                android:text="@string/tv_before_contact"/>
+
+                        </RelativeLayout>
+                        <!--小环图1 end-->
+
+                        <!--小环图2-->
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp">
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/piechart_time_before_aseptic_opt_main"
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_centerInParent="true"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="9sp"
+                                android:gravity="center"
+                                android:textColor="@color/textNormalColor"
+                                android:text="@string/tv_before_aseptic_operation"/>
+
+                        </RelativeLayout>
+                        <!--小环图2 end-->
+
+                        <!--小环图3-->
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp">
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/piechart_time_after_contact_env"
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_centerInParent="true"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="9sp"
+                                android:gravity="center"
+                                android:textColor="@color/textNormalColor"
+                                android:text="@string/tv_after_contact_env"/>
+                        </RelativeLayout>
+                        <!--小环图3 end-->
+
+                        <!--小环图4 接触体液前 暂时不予显示 android:visibility="gone"-->
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:visibility="gone">
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/piechart_time_after_contact_fluids"
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_centerInParent="true"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="9sp"
+                                android:gravity="center"
+                                android:textColor="@color/textNormalColor"
+                                android:text="@string/tv_after_contact_body_fluids"/>
+                        </RelativeLayout>
+                        <!--小环图4 end-->
+
+                        <!--小环图5-->
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp">
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/piechart_time_after_contact_patient"
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_centerInParent="true"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="9sp"
+                                android:gravity="center"
+                                android:textColor="@color/textNormalColor"
+                                android:text="@string/tv_after_contact_patients"/>
+                        </RelativeLayout>
+                        <!--小环图5 end-->
+                    </LinearLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <!--card 2 end-->
+
+            <!--card3 按照角色对比-->
+            <android.support.v7.widget.CardView
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_role_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/selector_card_bk">
+                    <!--卡片的标题-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/ll_role_tittle">
+                        <ImageView
+                            android:src="@drawable/icon_role_compare"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="@string/text_tittle_departl_role_compliance_rate"
+                            android:textSize="12sp"
+                            android:textColor="@color/textNormalColor"
+                            android:id="@+id/textView3"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="16dp"
+                            android:gravity="end"
+                            android:layout_marginStart="15dp"
+                            android:text="@string/text_to_more"
+                            android:textSize="12sp"
+                            android:textColor="@color/textNormalColor"/>
+                    </LinearLayout>
+                    <!--折线图-->
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/linechart_role_compare_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="#ffffff"
+                        android:layout_margin="16dp"
+                        android:layout_centerInParent="true"
+                        android:layout_below="@+id/ll_role_tittle"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+            <!--card 3 end-->
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

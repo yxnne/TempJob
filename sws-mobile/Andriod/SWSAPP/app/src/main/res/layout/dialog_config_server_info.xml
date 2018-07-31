@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_glide"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.iel.swsapp.activity.GuideActivity">
+  <EditText
+      android:id="@+id/et_config_server_ip_dialog2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="@string/hint_config_server_ip"/>
+    <EditText
+        android:id="@+id/et_config_server_port_dialog2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_config_server_ip"/>
+    <Button
+        android:id="@+id/btn_config_server_ok2"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/btn_ok"
+        android:textColor="@color/textNormalColor"
+        android:background="@drawable/shape_button_config_server_normal"/>
+    <Button
+        android:id="@+id/btn_config_server_cancel2"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/btn_cancel"
+        android:textColor="@color/textNormalColor"
+        android:background="@drawable/shape_button_config_server_normal"/>
+</LinearLayout>

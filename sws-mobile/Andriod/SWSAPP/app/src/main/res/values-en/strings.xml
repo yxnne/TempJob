@@ -1,0 +1,165 @@
+<resources>
+    <string name="app_name">Smart Hand Hygiene Perception</string>
+    <string name="app_slogan">SWS APP Slogan</string>
+    <string name="app_copyright">copyright © 2017.ichicom.com \nAll Rights Reserved.</string>
+
+
+
+    <string name="info_user_input_empty">User Can not be Empty!</string>
+    <string name="info_pwd_input_empty">Password Can not be Empty!</string>
+    <string name="info_user_or_pwd_input_empty">User or Password Can not be Empty!</string>
+
+    <string name="info_guide_tittle_1">Department Rate</string>
+    <string name="info_guide_detail_1">Deaprtment Rate and Department Staff Rate in Hospital</string>
+    <string name="info_guide_tittle_2">Real Time Events</string>
+    <string name="info_guide_detail_2">Check the Real Time Events and History Events by Conditions</string>
+    <string name="info_guide_tittle_3">Profile Info</string>
+    <string name="info_guide_detail_3">Profile Infomations:Departmet,Rates,Rank and so on</string>
+
+
+    <string name="info_user_not_exists">User is Not Exsit!</string>
+    <string name="info_pwd_incorrect">Incorrect Password!</string>
+    <string name="info_network_error">Network Error!</string>
+    <string name="info_login_sucess">Login Success!</string>
+    <string name="info_login_error">Login Error!</string>
+    <string name="info_login_username_pwd_error">Username or Password Incorrect!</string>
+    <string name="info_login_serverinfo_not_config">No Server Config!</string>
+    <string name="info_server_config_ok">Server Info Congfig OK:\nServer IP: %1$s,Port: %2$s</string>
+    <string name="info_illegal_pick_time">An ILLegal Pick ,Please Choose it Once Again！\ncause Start Time After End Time</string>
+    <string name="info_test_no_server_msg">Input Whole Config Msg First!</string>
+    <string name="info_test_no_server_error">Config is not Ok!</string>
+    <string name="info_test_server_comunicate">Config is Ok,Recieve Server Response!</string>
+
+
+    <string name="info_user_config_no_card">Cannot Get Rate Msg.Current User have No Relative Card!</string>
+
+    <string name="info_no_new_data">No more datas!</string>
+    <string name="info_no_check_data">No datas!</string>
+
+    <string name="hint_input_username">Please Input Your UserName</string>
+    <string name="hint_input_password">Please Input Your Password</string>
+    <string name="hint_config_server_ip">Server Ip Config Here</string>
+    <string name="hint_config_server_port">Server Port Config Here</string>
+
+    <string name="tab_text_manual">Manual</string>
+    <string name="tab_text_main">Main</string>
+    <string name="tab_text_search">Check</string>
+    <string name="tab_text_device">Device</string>
+    <string name="tab_text_profile">Profile</string>
+    <string name="tab_text_setting">Setting</string>
+
+    <string name="tab_text_event_now">Real Time Event</string>
+    <string name="tab_text_event_history">History Event</string>
+
+    <string name="tab_text_rate_depart">Department Rates</string>
+    <string name="tab_text_rate_staff">All Staff Rates</string>
+
+    <string name="btn_login">Login</string>
+    <string name="btn_access_guide">Access APP</string>
+    <string name="btn_config_server">Server Config</string>
+    <string name="btn_config_server_modify">Server Config Modify</string>
+    <string name="btn_ok">Sure</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_test">Test</string>
+
+    <string name="tv_guide_page_1">tv_glide_page_1</string>
+    <string name="tv_guide_page_2">tv_glide_page_2</string>
+    <string name="tv_guide_page_3">tv_glide_page_3</string>
+    <string name="tv_guide_skip">Skip Glide</string>
+
+    <string name="tv_before_contact">Before Contact Patients</string>
+    <string name="tv_before_aseptic_operation">Before Aseptic operation</string>
+    <string name="tv_after_contact_env">After Contact Environment</string>
+    <string name="tv_after_contact_body_fluids">After Contact Body Fluids</string>
+    <string name="tv_after_contact_patients">After Contact Patients</string>
+
+
+    <string name="text_tittle_departl_compliance_rate">Departmental compliance rate</string>
+    <string name="text_tittle_departl_time_compliance_rate">Departmental Time compliance rate</string>
+    <string name="text_tittle_departl_role_compliance_rate">Departmental Role compliance rate Comparation</string>
+    <string name="text_tittle_Setting">Setting</string>
+
+    <!--人员角色-->
+    <string name="text_role_nurse">Nurse</string>
+    <string name="text_role_support_worker">Support Worker</string>
+    <string name="text_role_doctor">Doctor</string>
+    <string name="text_role_physician">Physician</string>
+    <string name="text_role_all">All</string>
+    <!--设备类型-->
+    <string name="text_device_ap">AP</string>
+    <string name="text_device_card">Card</string>
+    <string name="text_device_bed">Bed</string>
+    <string name="text_device_door">Door</string>
+    <string name="text_device_bottle">Bottle</string>
+
+    <string name="text_role_name">Name</string>
+    <string name="text_event">Event</string>
+    <string name="text_time">Time</string>
+
+    <string name="text_event_type">Event Type</string>
+    <string name="text_choose_time">Choose Time</string>
+    <string name="text_role_type">Role Type</string>
+
+    <string name="text_no">No.</string>
+    <string name="text_card_no">Card No.</string>
+    <string name="text_rate_total">Total Rate</string>
+
+    <string name="text_to">To</string>
+    <string name="text_check">Check</string>
+
+    <string name="text_device_nbr">Device Number  :</string>
+    <string name="text_device_low_power_nbr">Low Power Number  :</string>
+
+    <string name="text_compliance_rate">Compliance Rate</string>
+    <string name="text_department_rank">Department Rank</string>
+    <string name="text_personal_rate">Personal Rate</string>
+
+    <string name="text_department">Department</string>
+    <string name="text_role">Job</string>
+    <string name="text_card">Card No.</string>
+    <string name="text_phone">Phone</string>
+    <string name="text_app_news">App News</string>
+
+    <string name="text_manual_form_input">Manual Record</string>
+    <string name="text_device_warnnig_detail_info">Warning Device Info</string>
+    <string name="text_device_warnnig_low_power">Warning Low Power</string>
+
+    <string name="text_device_warnnig_device_type"  >Device Type  :</string>
+    <string name="text_device_warnnig_device_no."   >Device No.   :</string>
+    <string name="text_device_warnnig_device_staff" >Device Staff :</string>
+
+
+    <string name="text_today" >Today</string>
+    <string name="text_recent_30day" >30 Day </string>
+
+    <string name="text_more_news">More News</string>
+    <string name="text_reload">Reload News</string>
+    <string name="text_share_news">Share News</string>
+    <string name="text_to_more">To More ></string>
+
+    <!--设置页文本-->
+    <string name="text_setting_main_stastic_time">Stastic Data Time</string>
+    <string name="text_setting_stastic_graphic_update_time">Stastic Graphic Update Time</string>
+    <string name="text_setting_main_realtime_update_time">Realtime Update Time</string>
+
+    <string name="text_setting_modify_pwd">Realtime Update Time</string>
+    <string name="text_setting_about_app">Realtime Update Time</string>
+
+
+
+    <string name="text_logout">Logout</string>
+
+    <string name="info_device_ok">This Kind Device All is Ok!</string>
+
+    <!--提示:3s内,再按一次退出程序-->
+    <string name="info_press_back_again_to_close">Info:Press Back Again in 3s to Exit App!</string>
+    <!--没有网络对话框-->
+    <string name="info_no_internet_dialog_tittle">Info : No Internet</string>
+    <string name="info_no_internet_dialog_msg">There is No Internet,or App will not Run Normally.Would You Like to Deal with it?</string>
+    <string name="info_dialog_sure">Sure</string>
+    <string name="info_dialog_cancel">Cancel</string>
+
+    <string name="text_choose_dapartment">Dapartment Choose :</string>
+
+    <string name="info_no_datastoday">No Datas Today !</string>
+</resources>

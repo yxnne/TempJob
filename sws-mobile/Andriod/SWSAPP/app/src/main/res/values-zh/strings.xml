@@ -1,0 +1,164 @@
+<resources>
+    <string name="app_name">        智控手卫生</string>
+    <string name="app_slogan">      SWS APP 待定标语</string>
+    <string name="app_copyright">   copyright © 2017.ichicom.com \nAll Rights Reserved.</string>
+
+
+    <string name="info_user_input_empty">       用户名不能为空哦!</string>
+    <string name="info_pwd_input_empty">        密码忘记输入了!</string>
+    <string name="info_user_or_pwd_input_empty">用户名或密码不能为空哦!</string>
+
+    <string name="info_guide_tittle_1">依从率统计</string>
+    <string name="info_guide_detail_1">查看医院内科室和科室员工的详细依从率数据</string>
+    <string name="info_guide_tittle_2">事件查看</string>
+    <string name="info_guide_detail_2">包括实时事件以及按条件筛选的历史事件</string>
+    <string name="info_guide_tittle_3">个人信息</string>
+    <string name="info_guide_detail_3">展现用户依从率或部门内排名等信息</string>
+
+    <string name="info_user_not_exists">该用户不存在!</string>
+    <string name="info_pwd_incorrect">  密码不正确!</string>
+    <string name="info_network_error">  网络有问题!</string>
+    <string name="info_login_sucess">   登录成功!</string>
+
+    <string name="info_login_error">                登录错误!</string>
+    <string name="info_login_username_pwd_error">   用户名或密码错误!</string>
+    <string name="info_login_serverinfo_not_config">尚未配置服务器信息!</string>
+    <string name="info_server_config_ok">           服务器信息配置成功:\n服务器IP: %1$s,端口: %2$s</string>
+    <string name="info_illegal_pick_time">          这个选择不合法,请重新选择吧 ！\n原因：结束时间在起始时间之前！</string>
+    <string name="info_test_no_server_msg">         请完善配置信息后再测试!</string>
+    <string name="info_test_no_server_error">       配置失败，无法与服务器通讯!</string>
+    <string name="info_test_server_comunicate">     当前配置可用,与服务器通讯测试成功!</string>
+
+    <string name="info_user_config_no_card">             当前用户未关联胸卡，所以没有相关洗手记录和统计信息</string>
+
+    <string name="info_no_new_data">当前没有更新的数据了!</string>
+    <string name="info_no_check_data">查询无数据!</string>
+
+    <string name="hint_input_username">请输入您的用户名</string>
+    <string name="hint_input_password">请在这里输入密码</string>
+
+    <string name="hint_config_server_ip">   服务器IP地址</string>
+    <string name="hint_config_server_port"> 服务器端口号</string>
+
+    <string name="tab_text_manual">     观察</string>
+    <string name="tab_text_main">       主页</string>
+    <string name="tab_text_search">     查询</string>
+    <string name="tab_text_device">     设备</string>
+    <string name="tab_text_profile">    个人</string>
+    <string name="tab_text_setting">    设置</string>
+
+    <string name="tab_text_event_now">      实时事件</string>
+    <string name="tab_text_event_history">  历史事件</string>
+
+    <string name="tab_text_rate_depart">    部门依从率概览</string>
+    <string name="tab_text_rate_staff">     部门人员依从率</string>
+
+    <string name="btn_login">               登录</string>
+    <string name="btn_access_guide">        开始体验</string>
+    <string name="btn_config_server">       服务器配置</string>
+    <string name="btn_config_server_modify">服务器配置更改</string>
+
+    <string name="btn_ok">      确定</string>
+    <string name="btn_cancel">  取消</string>
+    <string name="btn_test">    测试</string>
+
+    <string name="tv_guide_page_1"> 引导1</string>
+    <string name="tv_guide_page_2"> 引导2</string>
+    <string name="tv_guide_page_3"> 引导3</string>
+    <string name="tv_guide_skip">   跳过</string>
+
+    <string name="tv_before_contact">           接触患者前</string>
+    <string name="tv_before_aseptic_operation"> 无菌操作前</string>
+    <string name="tv_after_contact_env">        接触环境后</string>
+    <string name="tv_after_contact_body_fluids">接触患者体液后</string>
+    <string name="tv_after_contact_patients">   接触患者后</string>
+
+
+    <string name="text_tittle_departl_compliance_rate">     手卫生依从率统计</string>
+    <string name="text_tittle_departl_time_compliance_rate">手卫生时机依从率分布</string>
+    <string name="text_tittle_departl_role_compliance_rate">人员类别分析</string>
+
+    <string name="text_tittle_Setting">设置</string>
+
+    <!--人员角色-->
+    <string name="text_role_nurse">         护士</string>
+    <string name="text_role_support_worker">护工</string>
+    <string name="text_role_doctor">        医生</string>
+    <string name="text_role_physician">     医师</string>
+    <string name="text_role_all">           全部</string>
+    <!--设备类型-->
+    <string name="text_device_ap">      AP</string>
+    <string name="text_device_card">    胸卡</string>
+    <string name="text_device_bed">     床识别器</string>
+    <string name="text_device_door">    进出识别器</string>
+    <string name="text_device_bottle">  液瓶识别器</string>
+
+    <string name="text_role_name">  姓名</string>
+    <string name="text_event">      事件</string>
+    <string name="text_time">       时间</string>
+
+    <string name="text_no">         序号</string>
+    <string name="text_card_no">    胸卡号</string>
+    <string name="text_rate_total"> 总依从率</string>
+
+    <string name="text_event_type"> 查询事件</string>
+    <string name="text_choose_time">选择时间</string>
+    <string name="text_role_type">  人员类别</string>
+
+    <string name="text_to">     至</string>
+    <string name="text_check">  查询</string>
+
+    <string name="text_device_nbr">             设备数量  ：</string>
+    <string name="text_device_low_power_nbr">   欠压数量  ：</string>
+
+    <string name="text_compliance_rate">依从率</string>
+    <string name="text_department_rank">部门排位</string>
+    <string name="text_personal_rate">  个人依从率</string>
+    <string name="text_app_news">       新闻</string>
+
+    <string name="text_department"> 科室</string>
+    <string name="text_role">       职务</string>
+    <string name="text_card">       胸卡</string>
+    <string name="text_phone">      电话</string>
+
+    <string name="text_manual_form_input">          人工录入信息</string>
+    <string name="text_device_warnnig_detail_info"> 设备提醒详情</string>
+    <string name="text_device_warnnig_low_power">   欠压提醒</string>
+
+    <string name="text_device_warnnig_device_type"> 设备类型 :</string>
+    <string name="text_device_warnnig_device_no.">  设备编号  :</string>
+    <string name="text_device_warnnig_device_staff">隶属员工 :</string>
+
+    <string name="text_today" >         当天</string>
+    <string name="text_recent_30day" >  近30天</string>
+
+    <string name="text_more_news">      更多新闻</string>
+    <string name="text_reload">         重新加载</string>
+    <string name="text_share_news">     分享新闻</string>
+    <string name="text_to_more">        更多 ></string>
+    <string name="text_logout">         退出登录</string>
+
+
+    <!--设置页文本-->
+    <string name="text_setting_main_stastic_time">          首页图表统计数据时间</string>
+    <string name="text_setting_stastic_graphic_update_time">统计图表刷新时间设置</string>
+    <string name="text_setting_main_realtime_update_time">  实时事件刷新时间设置</string>
+
+    <string name="text_setting_modify_pwd"> 修改密码</string>
+    <string name="text_setting_about_app">  关于APP</string>
+
+
+
+    <string name="info_device_ok">      该种设备运行都正常!</string>
+    <!--提示:3s内,再按一次退出程序-->
+    <string name="info_press_back_again_to_close">  提示:3秒内，连续点击退出</string>
+    <!--没有网络对话框-->
+    <string name="info_no_internet_dialog_tittle">  没有网络哦</string>
+    <string name="info_no_internet_dialog_msg">     当前手机未打开网络设置，这将会影响APP正常运行，您要处理吗？</string>
+
+    <string name="info_dialog_sure">    当然</string>
+    <string name="info_dialog_cancel">  就不</string>
+
+    <string name="text_choose_dapartment">请选择查询科室 :</string>
+    <string name="info_no_datastoday">    今天还没有数据哦！</string>
+</resources>

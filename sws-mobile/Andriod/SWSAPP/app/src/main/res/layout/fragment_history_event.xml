@@ -1,0 +1,253 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.iel.swsapp.fragment.HistoryEventFragment">
+
+    <!--查询框整体-->
+    <LinearLayout
+        android:id="@+id/ll_event_check_condition"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/backgroudColor_lightGrey"
+        android:orientation="vertical">
+        <!--第1行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+
+                android:text="@string/text_event_type"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <Spinner
+                    android:id="@+id/spinner_event_type_his"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/envent_types"
+
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <!--end 第1行-->
+
+        <!--第2行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+
+                android:text="@string/text_choose_time"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <Button
+                    android:id="@+id/btn_choose_his_event_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:paddingStart="8dp"
+                    android:gravity="start|center_vertical"
+                    android:background="@drawable/shape_button_config_server_normal"
+                    android:text="2017-03-01     至     2017-03-15"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <!--end 第2行-->
+
+        <!--第3行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_role_type"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Spinner
+                    android:id="@+id/spinner_role_type"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:entries="@array/role_types"
+                    />
+
+                <Button
+                    android:id="@+id/btn_check_his_event"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/text_check"
+
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:background="@drawable/shape_button_config_server_normal"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--end 第3行-->
+
+    </LinearLayout>
+    <!--end 查询框整体-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/myDivider"/>
+
+    <!--表头 -->
+    <LinearLayout
+        android:id="@+id/ll_history_event_table_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:id="@+id/rl_item_event_1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:id="@+id/tv_name_item_list_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_role_name"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"/>
+            <ImageView
+                android:id="@+id/iv_divider_1"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/divider_vertical_lighter_gray"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_item_event_2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="2"
+            >
+            <TextView
+                android:id="@+id/tv_event_item_list_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/text_event"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"/>
+            <ImageView
+                android:id="@+id/iv_divider_2"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/divider_vertical_lighter_gray"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_item_event_3"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="2"
+            >
+            <TextView
+                android:id="@+id/tv_time_item_list_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:text="@string/text_time"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <!--end 表头 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--Progress Bar-->
+        <ProgressBar
+            android:id="@+id/pb_loading_history_event"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:visibility="gone"
+            style="?android:attr/progressBarStyleSmall"
+            />
+        <!--end Progress Bar-->
+        <!--ListView-->
+        <!--<ListView-->
+            <!--android:id="@+id/lv_history_event"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:visibility="gone"/>-->
+        <!--Ptr + MyLoadMoreListView实现下拉刷新和上拉加载的方案-->
+        <in.srain.cube.views.ptr.PtrClassicFrameLayout
+            android:id="@+id/ptframe_history_event"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:ptr_duration_to_close="300"
+            app:ptr_duration_to_close_header="2000"
+            app:ptr_keep_header_when_refresh="true"
+            app:ptr_pull_to_fresh="false"
+            app:ptr_ratio_of_header_height_to_refresh="1.2"
+            app:ptr_resistance="1.7">
+
+            <com.iel.swsapp.view.MyLoadMoreListView
+                android:id="@+id/mlv_history_event"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+        </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+        <!--浮动小按钮-->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_to_check_condotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/icon_check_2"
+            android:elevation="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>

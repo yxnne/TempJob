@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tmp_activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blockBetweenColor"
+    tools:context="com.iel.swsapp.activity.LoginActivity">
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/ptframe_depart_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        
+        app:ptr_duration_to_close="300"
+        app:ptr_duration_to_close_header="1000"
+        app:ptr_keep_header_when_refresh="true"
+        app:ptr_pull_to_fresh="false"
+        app:ptr_ratio_of_header_height_to_refresh="1.2"
+        app:ptr_resistance="1.7">
+
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--Start :饼图:整体依从率的Card-->
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginTop="12dp"
+                        android:elevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <!-- Start :统一的"胶囊" 选项-->
+                            <RadioGroup
+                                android:id="@+id/gp_rate_staff"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/rbtn_depart_today"
+                                    android:layout_width="60dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/selector_radiobtn_bk_left"
+                                    android:button="@null"
+                                    android:gravity="center"
+                                    android:text="@string/text_today"
+                                    android:textColor="@drawable/selector_radiobtn_text_color_change"/>
+
+                                <RadioButton
+                                    android:id="@+id/rbtn_depart_rencent30"
+                                    android:layout_width="60dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/selector_radiobtn_bk_right"
+                                    android:button="@null"
+                                    android:gravity="center"
+                                    android:text="@string/text_recent_30day"
+                                    android:textColor="@drawable/selector_radiobtn_text_color_change"
+                                    />
+                            </RadioGroup>
+
+                            <!--end :统一的"胶囊" 选项-->
+
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/pieChart_depart_rate_fragment"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                />
+
+                        </LinearLayout>
+
+
+                    </android.support.v7.widget.CardView>
+                    <!--end :饼图:整体依从率的Card-->
+
+                    <!--Start :柱状:整体依从率的Card-->
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp">
+                        <!--时间紧急 用Progress Bar 写出效果吧-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical|end"
+                                    android:paddingEnd="12dp"
+                                    android:text="@string/tv_before_contact"
+                                    android:textColor="@color/textNormalColor"
+                                    android:textSize="13sp"/>
+
+                                <ProgressBar
+                                    android:id="@+id/pb_personal_bar_before_contact"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="24dp"
+                                    android:layout_weight="4"
+                                    android:max="100"
+                                    android:progress="0"
+                                    android:progressDrawable="@drawable/bk_progressbar"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tv_personal_value_before_contact"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.5"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="12dp"
+                                    android:text="20%"
+                                    android:textColor="@color/textNormalColor"
+                                    android:textSize="13sp"
+                                    />
+
+                            </LinearLayout>
+                            <!--
+                            2
+                            -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical|end"
+                                    android:paddingEnd="12dp"
+                                    android:text="@string/tv_before_aseptic_operation"
+                                    android:textColor="@color/textNormalColor"
+                                    android:textSize="13sp"/>
+
+                                <ProgressBar
+                                    android:id="@+id/pb_personal_bar_before_aseptic"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="24dp"
+                                    android:layout_weight="4"
+                                    android:max="100"
+                                    android:progress="0"
+                                    android:progressDrawable="@drawable/bk_progressbar"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tv_personal_value_before_aseptic"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.5"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="12dp"
+                                    android:text="30%"
+                                    android:textColor="@color/textNormalColor"
+                                    android:textSize="13sp"/>
+
+                            </LinearLayout>
+
+                            <!--
+                            3
+                            -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical|end"
+                                    android:paddingEnd="12dp"
+                                    android:text="@string/tv_after_contact_env"
+                                    android:textColor="@color/textNormalColor"
+                                    android:textSize="13sp"/>
+
+                                <ProgressBar
+                                    android:id="@+id/pb_personal_bar_after_contact_envv"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="24dp"
+                                    android:layout_weight="4"
+                                    android:max="100"
+                                    android:progress="0"
+                                    android:progressDrawable="@drawable/bk_progressbar"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tv_personal_value_bar_after_contact_env"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.5"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="12dp"
+                                    android:text="ddddd"
+                                    android:textColor="@color/textNormalColor"
+                                    android:textSize="13sp"/>
+
+                            </LinearLayout>
+
+
+                            <!--
+                            4 接触患者体液后 暂时注销掉 不予显示android:visibility="gone"
+                            -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical|end"
+                                    android:paddingEnd="12dp"
+                                    android:text="@string/tv_after_contact_body_fluids"
+                                    android:textColor="@color/textNormalColor"
+                                    android:textSize="13sp"/>
+                                <ProgressBar
+                                    android:id="@+id/pb_personal_bar_after_contact_body_fluids"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="24dp"
+                                    android:layout_weight="4"
+                                    android:max="100"
+                                    android:progress="0"
+                                    android:progressDrawable="@drawable/bk_progressbar"
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_personal_value_bar_after_contact_body_fluids"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.5"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="12dp"
+                                    android:text="ddddd"
+                                    android:textColor="@color/textNormalColor"
+                                    android:textSize="13sp"/>
+                            </LinearLayout>
+                            <!--
+                            5
+                            -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginBottom="20dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical|end"
+                                    android:paddingEnd="12dp"
+                                    android:text="@string/tv_after_contact_patients"
+                                    android:textColor="@color/textNormalColor"
+                                    android:textSize="13sp"/>
+
+                                <ProgressBar
+                                    android:id="@+id/pb_personal_bar_after_contact_patients"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="24dp"
+                                    android:layout_weight="4"
+                                    android:max="100"
+                                    android:progress="0"
+                                    android:progressDrawable="@drawable/bk_progressbar"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tv_personal_value_bar_after_contact_patients"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.5"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="12dp"
+                                    android:text="ddddd"
+                                    android:textColor="@color/textNormalColor"
+                                    android:textSize="13sp"/>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+                    <!--end :柱状:整体依从率的Card-->
+
+                    <!--Start :雷达整体依从率的Card-->
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="280dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="12dp"
+                        android:elevation="5dp">
+
+                        <com.github.mikephil.charting.charts.RadarChart
+                            android:id="@+id/radarchart_depart_rate_fragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            />
+
+
+                    </android.support.v7.widget.CardView>
+                    <!--end :雷达：整体依从率的Card-->
+
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+</FrameLayout>

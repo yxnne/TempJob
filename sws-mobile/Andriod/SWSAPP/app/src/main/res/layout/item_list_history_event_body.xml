@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_item_event"
+              android:layout_width="match_parent"
+              android:layout_height="32dp"
+              android:gravity="center"
+              android:orientation="horizontal">
+    <RelativeLayout
+        android:id="@+id/rl_item_event_1"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:id="@+id/tv_name_item_list_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_role_name"
+            android:layout_centerInParent="true"/>
+        <ImageView
+            android:id="@+id/iv_divider_1"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/divider_vertical_lighter_gray"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_item_event_2"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_weight="2"
+        >
+        <TextView
+            android:id="@+id/tv_event_item_list_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/text_event"/>
+        <ImageView
+            android:id="@+id/iv_divider_2"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/divider_vertical_lighter_gray"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_item_event_3"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_weight="2"
+        >
+        <TextView
+            android:id="@+id/tv_time_item_list_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:text="@string/text_time"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

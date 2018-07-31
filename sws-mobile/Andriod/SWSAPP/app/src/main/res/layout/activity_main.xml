@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <!--start :伪装的Actionbar
+        本activity已经去掉Actionbar了，做一个伪装的actionbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:id="@+id/tv_page_tittle_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_text_main"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"/>
+        <!--<TextView-->
+            <!--android:id="@+id/tv_setting"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="16dp"-->
+            <!--android:text="@string/tab_text_setting"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:visibility="gone"-->
+            <!--android:textColor="@android:color/white"/>-->
+        <ImageView
+            android:id="@+id/iv_profile_setting"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            android:src="@drawable/icon_setting"/>
+
+    </RelativeLayout>
+    <!--end 伪装的Actionbar-->
+
+
+    <!--呈现不同页面的Viewpager-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_main"
+        android:background="@color/backgroudColor_lightGrey"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </android.support.v4.view.ViewPager>
+
+    <!--底部Tab栏-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/myDivider"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout_main"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="@android:color/white"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/colorAccent"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="@color/textNormalColor"
+        />
+</LinearLayout>

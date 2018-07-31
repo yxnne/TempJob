@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_item_event"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:orientation="horizontal">
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_banner_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:elevation="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blockBetweenColor"
+            android:gravity="bottom"
+            android:layout_marginLeft="16dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="88dp"
+                android:paddingEnd="16dp"
+                android:layout_weight="2"
+
+                android:background="@color/myWhite"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_item_manual_record_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="123"
+                    android:textColor="@color/textNormalColor"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+
+                    android:id="@+id/tv_item_manual_record_depart_role"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="16dp"
+                    android:text="重症医学科，医生"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tv_item_manual_record_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="2018-10-31"
+                    android:layout_marginTop="8dp"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="88dp"
+                android:paddingEnd="16dp"
+                android:layout_weight="2"
+                android:background="@color/myWhite"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_item_manual_record_way"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="8dp"
+                    android:text="洗手方式：流水洗"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tv_item_manual_record_occasion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="8dp"
+                    android:text="洗手时机:接触患者前"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tv_item_manual_record_correct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="观察结果：正确"
+                    android:layout_marginTop="8dp"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

@@ -1,0 +1,486 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="com.iel.swsapp.fragment.ManualFragment"
+              android:orientation="vertical"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroudColor_lightGrey"
+            android:orientation="vertical">
+
+            <!--部门统计概要-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="8dp"
+                android:background="@color/myWhite"
+                android:orientation="horizontal">
+                <!--放置总的统计图表-->
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="16dp">
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/piechart_manual_statistic_overall"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:layout_centerInParent="true"
+                            />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <!--手卫生依从率-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_marginStart="8dp"
+                                android:layout_width="0dp"
+                                android:layout_weight="7"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:text="手卫生依从率: "
+                                android:textColor="@color/textNormalColor"/>
+                            <TextView
+                                android:id="@+id/tv_way_manual_statistics_rate_obey"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="30%"
+                                android:textColor="@color/textNormalColor"/>
+                        </LinearLayout>
+                        <!--洗手正确率-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:gravity="center_vertical|bottom"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_marginStart="8dp"
+                                android:layout_width="0dp"
+                                android:layout_weight="7"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:text="手卫生正确率: "
+                                android:textColor="@color/textNormalColor"/>
+                            <TextView
+                                android:id="@+id/tv_way_manual_statistics_rate_correction"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="55%"
+                                android:textColor="@color/textNormalColor"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--信息单-->
+                <LinearLayout
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!--统计部门-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tv_Depart_manual_statistic"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="部门 :"
+                            android:textColor="@color/textNormalColor"/>
+                        <Spinner
+                            android:id="@+id/spinner_manual_statistic_depart"
+                            android:layout_width="0dp"
+                            android:layout_weight="4"
+                            android:layout_height="wrap_content">
+                        </Spinner>
+                    </LinearLayout>
+
+                    <!--统计时间-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tv_time_manual_statistic"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:text="时间 :"
+                            android:textColor="@color/textNormalColor"/>
+                        <Button
+                            android:id="@+id/btn_choose_time_manual_statistic"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="0dp"
+                            android:gravity="start|center_vertical"
+                            android:background="@drawable/shape_button_config_server_normal"
+                            android:text="2017-03-01 至 2017-03-15"
+                            android:textSize="12sp"
+                            />
+                    </LinearLayout>
+
+                    <!--统计洗手方式-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tv_way_manual_statistic"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="方式 :"
+
+                            android:textColor="@color/textNormalColor"/>
+                        <Spinner
+                            android:id="@+id/spinner_manual_statistic_way"
+                            android:layout_width="0dp"
+                            android:layout_weight="4"
+                            android:entries="@array/manual_wash_ways"
+                            android:layout_height="wrap_content">
+                        </Spinner>
+                    </LinearLayout>
+
+                    <!--统计正确率-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="bottom|right"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tv_way_manual_more_staff1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:textSize="12sp"
+                            android:visibility="invisible"
+                            android:text="所有人工记录结果 >>"
+                            android:textColor="@color/textNormalColor"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!--end 部门统计概要-->
+
+            <!--洗手时机统计-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="16dp"
+                android:background="@color/myWhite"
+                android:orientation="vertical">
+                <!--卡片标题-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="观察统计洗手时机"
+                        android:textSize="12sp"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_manual_statistic_occassion"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="4"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:entries="@array/manual_what_statistics"/>
+                </LinearLayout>
+                <!--图表容器-->
+                <!--第一排-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/piechart_manual_statistic_before_contact_patient"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:gravity="center_vertical"
+                            />
+                        <TextView
+                            android:gravity="center_vertical"
+                            android:layout_width="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginStart="2dp"
+                            android:layout_height="match_parent"
+                            android:text="接触患者前"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/piechart_manual_statistic_after_contact_patient"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:gravity="center_vertical"
+                            />
+                        <TextView
+                            android:gravity="center_vertical"
+                            android:layout_width="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginStart="2dp"
+                            android:layout_height="match_parent"
+                            android:text="接触患者后"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <!--end 第一排完-->
+
+                <!--第二排-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/piechart_manual_statistic_before_aspetic"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:gravity="center_vertical"
+                            />
+                        <TextView
+                            android:gravity="center_vertical"
+                            android:layout_width="0dp"
+                            android:layout_weight="3"
+                            android:layout_height="match_parent"
+                            android:text="无菌操作前"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/piechart_manual_statistic_after_contact_fluid"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:gravity="center_vertical"
+                            />
+                        <TextView
+                            android:gravity="center_vertical"
+                            android:layout_width="0dp"
+                            android:layout_weight="3"
+                            android:layout_height="match_parent"
+                            android:text="接触体液后"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <!--end 第二排完-->
+
+                <!--第三排-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/piechart_manual_statistic_after_contact_patient_env"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:gravity="center_vertical"
+                            />
+                        <TextView
+                            android:gravity="center_vertical"
+                            android:layout_width="0dp"
+                            android:layout_weight="3"
+                            android:layout_height="match_parent"
+                            android:text="接触患者环境后"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                    </LinearLayout>
+                </LinearLayout>
+                <!--end 第三排完-->
+
+            </LinearLayout>
+            <!--end 洗手时机统计-->
+
+            <!--角色统计-->
+            <LinearLayout
+                android:id="@+id/ll_role"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/myWhite"
+                android:orientation="vertical">
+                <!--卡片标题-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="观察统计人员类别"
+                        android:textSize="12sp"/>
+                    <Spinner
+                        android:id="@+id/spinner_manual_statistic_role"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="4"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/manual_what_statistics"/>
+                </LinearLayout>
+                <!--图表容器-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <com.github.mikephil.charting.charts.RadarChart
+                        android:id="@+id/radarchart_manual_statistics_role"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+            <!--end 角色统计-->
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_more_staff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:gravity="center">
+                    <TextView
+
+                        android:id="@+id/tv_way_manual_more_staff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="12sp"
+                        android:text="所 有 观 察 记 录 结 果  >>"
+                        android:textColor="@color/textNormalColor"/>
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

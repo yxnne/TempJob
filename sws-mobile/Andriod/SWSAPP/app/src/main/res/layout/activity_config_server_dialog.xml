@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_config_server_dialog"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="290dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="170dp"
+    android:orientation="vertical"
+    tools:context="com.iel.swsapp.activity.ConfigServerDialogActivity">
+    <EditText
+        android:id="@+id/et_config_server_ip_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_config_server_ip"
+        android:textColor="@color/textNormalColor"
+        android:textColorHint="@color/colorPrimary"/>
+    <EditText
+        android:id="@+id/et_config_server_port_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_config_server_port"
+        android:textColor="@color/textNormalColor"
+        android:textColorHint="@color/colorPrimary"/>
+
+    <Button
+        android:id="@+id/btn_config_server_test"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/btn_test"
+        android:textColor="@color/myWhite"
+        android:background="@drawable/shape_button_login_normal"/>
+    <Button
+        android:id="@+id/btn_config_server_ok"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/btn_ok"
+        android:textColor="@color/myWhite"
+        android:background="@drawable/shape_button_login_normal"/>
+    <Button
+        android:id="@+id/btn_config_server_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/btn_cancel"
+        android:textColor="@color/textNormalColor"
+        android:background="@drawable/shape_button_config_server_normal"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_more_news"
+        android:title="@string/text_more_news"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_reload_news"
+        android:title="@string/text_reload"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_share_news"
+        android:title="@string/text_share_news"
+        app:showAsAction="never"/>
+
+</menu>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.iel.swsapp">
+
+    <!-- 权限配置区域 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获得网络状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- READ_PHONE_STATE -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- ACCESS_WIFI_STATE -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- READ_LOGS -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <application
+        android:name=".application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon_app_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 测试UI用的 在测试时会临时放成启动页 -->
+        <activity android:name=".activity.TestUIActivity" />
+        <!-- MainActivity:主页 -->
+        <activity android:name=".activity.MainActivity" />
+        <!-- LoginActivity:登录页 -->
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/FullScreenActivityTheme">
+            <intent-filter>
+                <action android:name="com.iel.swsapp.activity.login" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- SplashActivity:一闪而过的标准启动页 -->
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/FullScreenActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- GuideActivity:引导页 -->
+        <activity
+            android:name=".activity.GuideActivity"
+            android:theme="@style/FullScreenActivityTheme" />
+        <!-- 配置系统服务器信息页，设置成对话框形式 -->
+        <activity
+            android:name=".activity.ConfigServerDialogActivity"
+            android:theme="@style/CustomActivityDialogStyle" />
+        <!-- DepartRateActivity: 部门依从率 -->
+        <activity android:name=".activity.DepartRateActivity" />
+
+        <!-- 设备欠压详细信息 -->
+        <activity android:name=".activity.DeviceWarnningActivity" />
+
+        <!-- 个人依从率详细信息 -->
+        <activity android:name=".activity.PersonalRateActivity" />
+        <!-- 新闻浏览页面 -->
+        <activity
+            android:name=".activity.NewsDetailActivity"
+            android:launchMode="singleTask" />
+        <!-- 新闻列表页面 -->
+        <activity
+            android:name=".activity.MoreNewsActivity"
+            android:launchMode="singleTask" />
+        <!-- 设置页面 -->
+        <activity android:name=".activity.SettingActivity" />
+        <!-- 版本介绍页 -->
+        <activity android:name=".activity.VersionIntroActivity" />
+        <!-- 手动统计：录入信息页面 -->
+        <activity android:name=".activity.ManualFormActivity"/>
+        <activity android:name=".activity.ManualRecordListActivity"/>
+    </application>
+
+</manifest>

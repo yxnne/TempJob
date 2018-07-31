@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.iel.swsapp.activity.ManualFormActivity">
+
+    <!--Start : ActionBar
+        通用的二级页面的ActionBar
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary">
+        <RelativeLayout
+            android:id="@+id/rl_myactionbar_back"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_actionbar_back_click">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/icon_back_to_up"
+                />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_myactionbar_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_manual_form_input"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"/>
+        <ImageView
+            android:id="@+id/iv_myactionbar_menu"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/icon_more_menu"/>
+    </RelativeLayout>
+    -->
+    <!--end ActionBar MySelf-->
+
+    <!--手动录入表单-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroudColor_lightGrey"
+            android:orientation="vertical">
+
+
+            <!--被观察者信息-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/myWhite"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="被观察者基本信息"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <!--被观察者部门-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_beObservedDepart"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="部 门:"
+                        android:textColor="@color/textNormalColor" />
+
+                    <Spinner
+                        android:id="@+id/spinner_manual_depart"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4">
+
+                    </Spinner>
+
+                </LinearLayout>
+                <!--被观察者职位-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_beObservedRole"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="角 色:"
+                        android:textColor="@color/textNormalColor" />
+
+                    <Spinner
+                        android:id="@+id/spinner_manual_role"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4">
+
+                    </Spinner>
+
+                </LinearLayout>
+                <!--被观察者 姓名-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_beObservedName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="姓 名:"
+                        android:textColor="@color/textNormalColor" />
+
+                    <EditText
+                        android:id="@+id/et_manual_beObservedName"
+                        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:background="@null"
+                        android:hint="  请在此输入被观测者姓名"
+                        android:textColor="@color/textNormalColor"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+                <!--被观察者 工号-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_beObservedNumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="工 号:"
+                        android:textColor="@color/textNormalColor" />
+
+                    <EditText
+                        android:id="@+id/et_manual_beObservedNumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:background="@null"
+                        android:hint="  请在此输入被观测者工号"
+                        android:textColor="@color/textNormalColor"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--被观察洗手时机-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/myWhite"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="观察洗手时机选择"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <!--两前三后时机节点选择-->
+                <com.iel.swsapp.view.KeyRadioGroupV2
+                    android:id="@+id/rg_manual_occasion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:checkedButton="@+id/rb_manual_AfterContactPatient"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_manual_beforeContactPatient"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="接触病患前"
+                            android:textColor="@color/textNormalColor" />
+
+                        <RadioButton
+                            android:id="@+id/rb_manual_AfterContactPatient"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="接触病患后"
+                            android:textColor="@color/textNormalColor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_manual_beforeAtepicOpt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="无菌操作前"
+                            android:textColor="@color/textNormalColor" />
+
+                        <RadioButton
+                            android:id="@+id/rb_manual_AfterContactPatientFluid"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="接触体液后"
+                            android:textColor="@color/textNormalColor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_manual_beforeContactPatientEnv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="接触患者环境后"
+                            android:textColor="@color/textNormalColor" />
+                    </LinearLayout>
+
+
+                </com.iel.swsapp.view.KeyRadioGroupV2>
+
+            </LinearLayout>
+
+            <!--洗手依从性-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/myWhite"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="依从情况观察"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <!--洗手方式选择-->
+                <com.iel.swsapp.view.KeyRadioGroupV1
+                    android:id="@+id/rg_manual_obey"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_manual_obey_ok"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="执行"
+                            android:textColor="@color/textNormalColor" />
+
+                        <RadioButton
+                            android:id="@+id/rb_manual_obey_no_ok"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="未执行"
+                            android:textColor="@color/textNormalColor" />
+                    </LinearLayout>
+                </com.iel.swsapp.view.KeyRadioGroupV1>
+            </LinearLayout>
+
+
+            <!--洗手方式选择-->
+            <LinearLayout
+                android:id="@+id/ll_manual_input_way"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/myWhite"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="洗手方式选择"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <!--洗手方式选择-->
+                <com.iel.swsapp.view.KeyRadioGroupV1
+                    android:id="@+id/rg_manual_way"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_manual_way_water"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="流水洗手卫生"
+                            android:textColor="@color/textNormalColor" />
+
+                        <RadioButton
+                            android:id="@+id/rb_manual_way_noWater84"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="手消液手卫生"
+                            android:textColor="@color/textNormalColor" />
+                    </LinearLayout>
+                </com.iel.swsapp.view.KeyRadioGroupV1>
+            </LinearLayout>
+
+            <!--观察员正确性评估-->
+            <LinearLayout
+                android:id="@+id/ll_manual_input_correction"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/myWhite"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="观察员正确性评估"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <!--正确性-->
+                <com.iel.swsapp.view.KeyRadioGroupV1
+                    android:id="@+id/rg_manual_correction"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_manual_wash_right"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:text="完全正确"
+                                android:textColor="@color/textNormalColor" />
+
+                            <RadioButton
+                                android:id="@+id/rb_manual_wash_wrong"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="不合规范"
+                                android:textColor="@color/textNormalColor" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.iel.swsapp.view.KeyRadioGroupV1>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_submit_manual_form"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_margin="32dp"
+                android:background="@drawable/shape_button_login_normal"
+                android:text="提交观察结果"
+                android:textColor="@color/myWhite"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

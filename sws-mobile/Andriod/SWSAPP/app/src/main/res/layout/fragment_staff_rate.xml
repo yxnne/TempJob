@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tmp_activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blockBetweenColor"
+    tools:context="com.iel.swsapp.activity.LoginActivity">
+
+   <android.support.v7.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="12dp">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <!-- Start :统一的"胶囊" 选项-->
+           <RadioGroup
+               android:id="@+id/gp_rate_staff"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"
+               android:orientation="horizontal"
+               android:gravity="center">
+               <RadioButton
+                   android:id="@+id/rbtn_staff_today"
+                   android:gravity="center"
+                   android:layout_width="60dp"
+                   android:layout_height="30dp"
+                   android:button="@null"
+                   android:text="@string/text_today"
+                   android:textColor="@drawable/selector_radiobtn_text_color_change"
+                   android:background="@drawable/selector_radiobtn_bk_left"/>
+               <RadioButton
+                   android:id="@+id/rbtn_staff_rencent30"
+                   android:gravity="center"
+                   android:layout_width="60dp"
+                   android:layout_height="30dp"
+                   android:button="@null"
+                   android:text="@string/text_recent_30day"
+                   android:textColor="@drawable/selector_radiobtn_text_color_change"
+                   android:background="@drawable/selector_radiobtn_bk_right"
+                   />
+           </RadioGroup>
+
+           <!--end :统一的"胶囊" 选项-->
+
+           <!--start 表头-->
+           <LinearLayout
+               android:id="@+id/ll_table_head"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:layout_below="@+id/gp_rate_staff"
+               android:layout_marginTop="15dp"
+               android:layout_marginStart="16dp"
+               android:layout_marginEnd="16dp"
+               android:orientation="horizontal"
+               android:background="@drawable/shape_table_rate_head">
+               <RelativeLayout
+                   android:id="@+id/rl_item_rate_staff_no"
+                   android:layout_width="0dp"
+                   android:layout_height="40dp"
+                   android:layout_weight="1.2"
+
+                   >
+                   <TextView
+                       android:id="@+id/tv_item_rate_staff_role"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/text_role"
+                       android:textColor="@color/myWhite"
+                       android:textSize="16sp"
+                       android:layout_centerInParent="true"/>
+                   <ImageView
+                       android:id="@+id/iv_divider_1"
+                       android:layout_width="2dp"
+                       android:layout_height="match_parent"
+                       android:layout_alignParentEnd="true"
+                       android:src="@drawable/divider_vertical_lighter_gray"/>
+
+               </RelativeLayout>
+               <RelativeLayout
+                   android:id="@+id/rl_item_event_2"
+                   android:layout_width="0dp"
+                   android:layout_height="40dp"
+                   android:layout_weight="2"
+
+                   >
+
+                   <ImageView
+                       android:id="@+id/iv_divider_2"
+                       android:layout_width="2dp"
+                       android:layout_height="match_parent"
+                       android:layout_alignParentEnd="true"
+                       android:src="@drawable/divider_vertical_lighter_gray"/>
+
+                   <TextView
+                       android:id="@+id/tv_item_rate_staff_name"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/text_role_name"
+                       android:textColor="@color/myWhite"
+                       android:textSize="16sp"
+                       android:layout_centerVertical="true"
+                       android:layout_centerHorizontal="true"/>
+
+               </RelativeLayout>
+               <RelativeLayout
+                   android:id="@+id/rl_item_event_3"
+                   android:layout_width="0dp"
+                   android:layout_height="40dp"
+                   android:layout_weight="2"
+
+                   >
+                   <TextView
+                       android:id="@+id/tv_item_rate_staff_card_no"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       android:textColor="@color/myWhite"
+                       android:textSize="16sp"
+                       android:text="@string/text_card_no"/>
+                   <ImageView
+                       android:id="@+id/iv_divider_4"
+                       android:layout_width="2dp"
+                       android:layout_height="match_parent"
+                       android:layout_alignParentEnd="true"
+                       android:src="@drawable/divider_vertical_lighter_gray"/>
+
+
+               </RelativeLayout>
+               <RelativeLayout
+                   android:id="@+id/rl_item_event_4"
+                   android:layout_width="0dp"
+                   android:layout_height="40dp"
+                   android:layout_weight="2"
+
+                   >
+                   <TextView
+                       android:id="@+id/tv_item_rate_staff_rate"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       android:textColor="@color/myWhite"
+                       android:textSize="16sp"
+                       android:text="@string/text_rate_total"/>
+
+               </RelativeLayout>
+
+
+           </LinearLayout>
+           <ProgressBar
+               android:id="@+id/pb_loading_staff_rate"
+               android:layout_width="32dp"
+               android:layout_height="32dp"
+               android:layout_below="@+id/ll_table_head"
+               android:layout_marginTop="32dp"
+               android:visibility="visible"
+               android:layout_centerHorizontal="true"
+               style="?android:attr/progressBarStyleSmall"
+               />
+           <!--end 表头-->
+           <!--Start ListView-->
+           <!--Ptr + MyLoadMoreListView实现下拉刷新和上拉加载的方案-->
+           <in.srain.cube.views.ptr.PtrClassicFrameLayout
+               android:layout_below="@+id/ll_table_head"
+               android:id="@+id/ptframe_staff_rate"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               xmlns:app="http://schemas.android.com/apk/res-auto"
+               app:ptr_duration_to_close="300"
+               app:ptr_duration_to_close_header="2000"
+               app:ptr_keep_header_when_refresh="true"
+               app:ptr_pull_to_fresh="false"
+               app:ptr_ratio_of_header_height_to_refresh="1.2"
+               app:ptr_resistance="1.7">
+           <ListView
+               android:id="@+id/lv_rate_staff"
+               android:layout_marginTop="8dp"
+               android:layout_marginStart="16dp"
+               android:layout_marginEnd="16dp"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:dividerHeight="0dp"  />
+               <!--end ListView-->
+           </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+
+       </RelativeLayout>
+
+
+   </android.support.v7.widget.CardView>
+</RelativeLayout>
